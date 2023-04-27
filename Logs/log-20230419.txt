@@ -1,0 +1,1 @@
+2023-04-19T23:53:32.1971114-03:00 0HMQ199K0R6O1:00000023 [ERR] Erro ao adicionar receita!An error occurred while updating the entries. See the inner exception for details. (27d96446)

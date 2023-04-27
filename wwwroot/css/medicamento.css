@@ -1,0 +1,61 @@
+.medicament {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9%;
+  margin-top: 5%;
+  margin-bottom: 0%;
+}
+
+.medicament-form {
+  margin-bottom: 5%;
+}
+
+.medicament-form input {
+  width: 28em;
+}
+
+.medicament-form button {
+  margin-left: 40%;
+}
+
+.table-medicament {
+  padding: 0%;
+  height: 5em;
+}
+
+
+.table-medicament tr>th:nth-child(2),
+.table-medicament tr>td:nth-child(2) {
+  width: 1%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-medicament tr>th:first-child,
+.table-medicament tr>td:first-child,
+.table-medicament tr>th:nth-child(3),
+.table-medicament tr>td:nth-child(3),
+.table-medicament tr>th:nth-child(4),
+.table-medicament tr>td:nth-child(4),
+.table-medicament tr>th:nth-child(5),
+.table-medicament tr>td:nth-child(5) {
+  width: 1%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-medicament tr:hover {
+  cursor: pointer;
+}
+
+.medicine-card {
+  width: 100%;
+  border: 1px solid #007bff;
+  opacity: 100%;
+}
+
+.medicine-card h5 {
+  color: #fff;
+  font-weight: bold;
+  background-color: #007bff;
+}

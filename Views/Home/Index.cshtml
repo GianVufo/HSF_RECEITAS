@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="main-div mb-0">
+
+    <div class="card-index">
+
+        <article class=" p-3 text-justify">
+
+            <h1 class="text-center">Dicas de Uso</h1>
+
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+            </p>
+
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+            </p>
+
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+            </p>
+
+        </article>
+
+    </div>
+
+    <div class="botao">
+
+        <div class="dropdown">
+
+            <button class="btn btn-primary dropdown-toggle
+                btn-receita" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Gerar Receituário
+            </button>
+
+            <div class="dropdown-menu btn-receita-dropdown"
+                aria-labelledby="dropdownMenuButton">
+
+                <a class="dropdown-item" asp-controller="Receituario"
+                    asp-action="Prescription"> <span
+                        class="material-symbols-outlined">
+                        medical_information </span> Apenas
+                    Receituário </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" asp-controller="AtestadoMedico"
+                    asp-action="ATMPrescription"> <span
+                        class="material-symbols-outlined">
+                        personal_injury </span> Receituário +
+                    Atestado Médico </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" asp-controller=""
+                    asp-action=""> <span
+                        class="material-symbols-outlined">
+                        clinical_notes </span> Receituário +
+                    Atestado de comparecimento </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

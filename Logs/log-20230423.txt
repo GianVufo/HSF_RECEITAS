@@ -1,0 +1,2 @@
+2023-04-23T14:07:21.4336545-03:00 0HMQ43JGDOGT6:0000006B [ERR] Erro ao Adicionar Medicamento!An error occurred while updating the entries. See the inner exception for details. (58895db0)
+2023-04-23T14:09:26.5250893-03:00 0HMQ43LSOP877:00000009 [ERR] Erro ao Adicionar Medicamento!An error occurred while updating the entries. See the inner exception for details. (58895db0)

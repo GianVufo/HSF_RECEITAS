@@ -1,0 +1,46 @@
+@model AtestadoMedico
+
+@{
+    ViewData["title"] = "Adicionar Atestado Médico";
+}
+
+
+
+<div class="col-md-12 atm">
+
+    <form id="atm-form" class="atm-form">
+
+        <span class="mt-3 mb-3 alerta"></span>
+
+        <div class="card medicine-card">
+
+            <h5 class="card-header text-center">Atestado Médico :</h5>
+
+            <div class="card-body">
+
+                <input id="atmId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
+
+                <label class="text-primary" for="">Nome do Paciente: </label>
+                <input type="text" id="atm-pacientName" class="form-control border-primary mb-3" asp-for="PacientName"
+                    required>
+
+                <label class="text-primary" for="">Unidade Médica: </label>
+                <input type="text" id="medicUnity" class="form-control border-primary mb-3" asp-for="MedicUnity"
+                    required>
+
+                <label class="text-primary" for="">Dias de repouso: </label>
+                <input type="number" id="restDays" class="form-control border-primary mb-3" asp-for="RestDays" required>
+
+                <label class="text-primary" for="">CID: </label>
+                <input type="text" id="dataAppoiment" class="form-control border-primary mb-3" asp-for="CID" required>
+
+                <button type="submit" title="Gerar atestado médico" class="btn btn-md btn-secondary btn-printer"> <span
+                class="material-symbols-outlined"> save </span> Salvar </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

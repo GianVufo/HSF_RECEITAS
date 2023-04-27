@@ -1,0 +1,66 @@
+@model Medicacao;
+
+@{
+    ViewData["title"] = "Adicionar Medicamentos";
+}
+
+<div class="container medicament">
+
+    <div class="medicamento">
+
+        <form name="atm-medic-form" id="atm-medic-form" class="medicament-form">
+
+            <!--<h1>Cadastrar Medicamentos</h1>-->
+
+            <span class="alerta"></span>
+
+            <input class="form-control mb-3" id="atm-medicationId" value="@Model.Id"
+                type="hidden" asp-for="@Model.Id" disabled required>
+
+            <input class="form-control mb-3" id="atm-receituarioId" type="hidden"
+                asp-for="@Model.ReceituarioId" disabled required>
+
+            <label for="">Nome do Medicamento: </label>
+            <input id="atm-medicationName" class="form-control mb-3"
+                asp-for="@Model.MedicationName"
+                type="text" required>
+
+            <label for="">Dosagem do Medicamento: </label>
+            <input id="atm-medicationDosage" class="form-control mb-3"
+                asp-for="@Model.MedicationDosage"
+                type="text" required>
+
+            <label asp-for="MedicationMethodUse" for="MedicationMethodUse"> Tipo
+                de uso do medicamento: </label>
+            <select class="custom-select d-block w-100"
+                asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                id="atm-medicationUse" required>
+
+                <option value="">Selecionar...</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Oral">Oral</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Intravenosa">Intravenosa</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Nasal">Nasal</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Tópica">Tópica</option>
+
+            </select>
+
+            <label for="">Tempo de uso (Dias): </label>
+            <input id="atm-useTime" class="form-control mb-3"
+                asp-for="@Model.UseTime"
+                type="number" required>
+
+            <label for="">Dose a cada (Hrs): </label>
+            <input id="atm-doseTime" class="form-control mb-3"
+                asp-for="@Model.DoseTime"
+                type="number" required>
+
+            <button type="submit" class="btn btn-md btn-primary mt-3">Adicionar</button>
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+@model List<Medicacao>
+
+@{
+    ViewData["title"] = "Listagem de medicamentos";
+}
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-responsive table-bordered table-sm table-striped
+    table-light table-hover table-medicament" id="medic-list">
+
+        <thead class="bg-info text-light text-center">
+
+            <tr>
+
+                <th>Nome da Medicação</th>
+                <th>Dosagem</th>
+                <th>Tipo de Uso</th>
+                <th>Tempo de Uso (Dias)</th>
+                <th>Doses a cada (Hrs)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody class="text-center">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td class="text-center">@item.MedicationName</td>
+
+                    <td>@item.MedicationDosage</td>
+
+                    <td>@item.MedicationMethodUse</td>
+
+                    <td>@item.UseTime - dias</td>
+
+                    <td>À cada @item.DoseTime - horas</td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <div class="alert alert-warning w-100 text-center alert-TA" role="alert">
+        Nenhuma medicação adicionada !
+    </div>
+}
+
