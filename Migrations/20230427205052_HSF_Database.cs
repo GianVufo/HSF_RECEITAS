@@ -32,7 +32,7 @@ namespace Hsf_Receitas.Migrations
                     PacientName = table.Column<string>(maxLength: 80, nullable: false),
                     MedicUnity = table.Column<string>(maxLength: 40, nullable: false),
                     CID = table.Column<string>(maxLength: 20, nullable: false),
-                    RestDays = table.Column<DateTime>(nullable: false),
+                    RestDays = table.Column<int>(nullable: false),
                     ReceituarioId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

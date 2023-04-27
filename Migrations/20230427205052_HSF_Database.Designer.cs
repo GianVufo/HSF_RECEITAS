@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hsf_Receitas.Migrations
 {
     [DbContext(typeof(HSFContext))]
-    [Migration("20230427163026_HSF_Database")]
+    [Migration("20230427205052_HSF_Database")]
     partial class HSF_Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,8 +43,8 @@ namespace Hsf_Receitas.Migrations
                     b.Property<int>("ReceituarioId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("RestDays")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int>("RestDays")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

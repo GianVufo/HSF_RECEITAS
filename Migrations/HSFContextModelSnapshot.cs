@@ -41,8 +41,8 @@ namespace Hsf_Receitas.Migrations
                     b.Property<int>("ReceituarioId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("RestDays")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int>("RestDays")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
