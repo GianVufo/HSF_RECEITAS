@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="04/25/2023 17:28:58" ReportInfo.Modified="04/28/2023 15:21:59" ReportInfo.CreatorVersion="2023.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/25/2023 17:28:58" ReportInfo.Modified="04/28/2023 15:31:50" ReportInfo.CreatorVersion="2023.1.0.0">
   <Dictionary>
     <BusinessObjectDataSource Name="medicationList" ReferenceName="medicationList" DataType="null" Enabled="true">
       <Column Name="Id" DataType="System.Int32"/>
@@ -68,13 +68,13 @@
       <TextObject Name="Text29" Left="585.9" Top="170.1" Width="170.1" Height="28.35" Border.Color="Highlight" Text="foi atendido(a) na unidade de" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
       <LineObject Name="Line7" Left="756" Top="189" Width="264.6" Border.Color="Highlight"/>
       <TextObject Name="Text30" Left="585.9" Top="189" Width="28.35" Height="28.35" Border.Color="Highlight" Text="do" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
-      <LineObject Name="Line9" Left="614.25" Top="207.9" Width="236.25" Border.Color="Highlight"/>
+      <LineObject Name="Line9" Left="604.8" Top="207.9" Width="245.7" Border.Color="Highlight"/>
       <TextObject Name="Text31" Left="850.5" Top="189" Width="47.25" Height="28.35" Border.Color="Highlight" Text="no dia" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
       <LineObject Name="Line10" Left="897.75" Top="207.9" Width="122.85" Border.Color="Highlight"/>
       <TextObject Name="Text33" Left="585.9" Top="207.9" Width="28.35" Height="28.35" Border.Color="Highlight" Text="às" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
-      <TextObject Name="Text34" Left="878.85" Top="207.9" Width="141.75" Height="28.35" Border.Color="Highlight" Text="horas. Necessitando de" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
-      <LineObject Name="Line11" Left="614.25" Top="226.8" Width="264.6" Border.Color="Highlight"/>
-      <TextObject Name="Text35" Left="916.65" Top="217.35" Width="103.95" Height="28.35" Border.Color="Highlight" Text="dias de repouso." HorzAlign="Justify" VertAlign="Bottom" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
+      <TextObject Name="Text34" Left="878.85" Top="207.9" Width="141.75" Height="28.35" Border.Color="Highlight" Text="horas. Necessitando de" HorzAlign="Right" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
+      <LineObject Name="Line11" Left="604.8" Top="226.8" Width="274.05" Border.Color="Highlight"/>
+      <TextObject Name="Text35" Left="916.65" Top="217.35" Width="103.95" Height="28.35" Border.Color="Highlight" Text="dias de repouso." HorzAlign="Right" VertAlign="Bottom" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
       <LineObject Name="Line12" Left="595.35" Top="245.7" Width="321.3" Border.Color="Highlight"/>
       <TextObject Name="Text42" Left="633.15" Top="151.2" Width="387.45" Height="18.9" Text="[atmList.PacientName]" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 9pt" TextFill.Color="Highlight"/>
       <TextObject Name="Text43" Left="793.8" Top="170.1" Width="226.8" Height="18.9" Text="[atmList.MedicUnity]" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 9pt" TextFill.Color="Highlight"/>
