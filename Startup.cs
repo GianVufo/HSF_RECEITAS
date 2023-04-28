@@ -35,6 +35,7 @@ namespace Hsf_Receitas
             services.AddSession();
             services.AddScoped<MedicacaoServices>();
             services.AddScoped<ReceituarioServices>();
+            services.AddScoped<AtestadoMedicoServices>();
 
         }
 
