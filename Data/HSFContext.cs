@@ -16,6 +16,8 @@ namespace Hsf_Receitas.Data
             optionsBuilder.UseMySql("server=localhost;port=3306;database=hsf_Db;uid=root;SslMode=Preferred;ConvertZeroDateTime=true;pooling=no");
         }
 
+        //server=mysql8003.site4now.net;port=3306;database=db_a98616_hsfdb;uid=a98616_hsfdb;password=Ann@1170615;SslMode=Preferred;ConvertZeroDateTime=true;pooling=no
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

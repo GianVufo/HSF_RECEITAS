@@ -1,0 +1,71 @@
+.prescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 0%;
+}
+
+.prescription-form input {
+    width: 20em;
+}
+
+.medic-btn:hover {
+    cursor: not-allowed;
+}   
+
+.btn-printer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.btn-printer-p {
+    width: 7em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.btn-printer-p span{
+    margin-right: 5%;
+}
+
+.btn-printer span{
+    margin-right: 6px;   
+}
+
+.card {
+    width: 45em;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border: 1px solid  #007bff;
+    opacity: 85%;
+}
+  
+.card-header {
+    border: 1px solid  #007bff;
+    background-color: #007bff;
+}
+
+.edit-button {
+    display: flex;
+    align-items: center;
+    margin-top: 26%;
+}
+
+.edit-button button {
+    width: 25em;
+}
+
+.card-body-edit-prescription {
+    margin-left: 4%;
+    margin-right: 0%;
+}
