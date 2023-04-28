@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Abr-2023 às 04:29
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 7.4.29
+-- Tempo de geração: 28-Abr-2023 às 22:40
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `atm`
+--
+
+CREATE TABLE `atm` (
+  `Id` int(11) NOT NULL,
+  `PacientName` varchar(80) NOT NULL,
+  `MedicUnity` varchar(40) NOT NULL,
+  `CID` varchar(20) NOT NULL,
+  `RestDays` int(11) NOT NULL,
+  `ReceituarioId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `medicamentos`
 --
 
@@ -32,6 +47,8 @@ CREATE TABLE `medicamentos` (
   `MedicationName` varchar(80) NOT NULL,
   `MedicationDosage` varchar(20) NOT NULL,
   `MedicationMethodUse` varchar(20) NOT NULL,
+  `UseTime` int(11) NOT NULL,
+  `DoseTime` int(11) NOT NULL,
   `ReceituarioId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,11 +81,18 @@ CREATE TABLE `__efmigrationshistory` (
 --
 
 INSERT INTO `__efmigrationshistory` (`MigrationId`, `ProductVersion`) VALUES
-('20230423022839_HSF_Database', '3.0.0');
+('20230428203930_HSF_Database', '3.0.0');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `atm`
+--
+ALTER TABLE `atm`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `IX_ATM_ReceituarioId` (`ReceituarioId`);
 
 --
 -- Índices para tabela `medicamentos`
@@ -94,6 +118,12 @@ ALTER TABLE `__efmigrationshistory`
 --
 
 --
+-- AUTO_INCREMENT de tabela `atm`
+--
+ALTER TABLE `atm`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `medicamentos`
 --
 ALTER TABLE `medicamentos`
@@ -108,6 +138,12 @@ ALTER TABLE `receitas`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `atm`
+--
+ALTER TABLE `atm`
+  ADD CONSTRAINT `FK_ATM_Receitas_ReceituarioId` FOREIGN KEY (`ReceituarioId`) REFERENCES `receitas` (`Id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `medicamentos`
