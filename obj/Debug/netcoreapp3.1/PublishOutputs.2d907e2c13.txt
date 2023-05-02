@@ -9,11 +9,15 @@ C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\icons\logo-hospital.bmp
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\images\banner.jpg
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logotipo-hospital-sao-francisco.png
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddATC.js
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddATCMedication.js
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddATCPrescription.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddATM.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddATMMedication.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddATMPrescription.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddMedication.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\AddPrescription.js
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\EditATCPrescription.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\EditATMPrescription.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\EditPrescription.js
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\bin\Debug\netcoreapp3.1\publish\wwwroot\js\site.js
