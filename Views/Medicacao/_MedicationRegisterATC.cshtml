@@ -15,9 +15,9 @@
             <span class="alerta"></span>
 
             <input class="form-control mb-3" id="atc-medicationId" value="@Model.Id"
-                type="number" asp-for="@Model.Id" disabled required>
+                type="hidden" asp-for="@Model.Id" disabled required>
 
-            <input class="form-control mb-3" id="atc-receituarioId-medication" type="number"
+            <input class="form-control mb-3" id="atc-receituarioId-medication" type="hidden"
                 asp-for="@Model.ReceituarioId" disabled required>
 
             <label for="">Nome do Medicamento: </label>
