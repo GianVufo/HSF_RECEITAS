@@ -20,7 +20,7 @@ namespace Hsf_Receitas.Controllers
         public ReceituarioController(ILogger<ReceituarioController> logger, IWebHostEnvironment environment, ReceituarioServices receituarioServices, MedicacaoServices medicacaoServices)
         {
             _logger = logger;
-            _environment = environment; 
+            _environment = environment;
             _ReceituarioServices = receituarioServices;
             _MedicacaoServices = medicacaoServices;
         }
@@ -46,7 +46,7 @@ namespace Hsf_Receitas.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao adicionar receita!" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao cadastrar Receita!" });
+                return Json(new { stats = "INVALID", message = "Falha ao cadastrar receita!" });
             }
 
         }
@@ -70,7 +70,7 @@ namespace Hsf_Receitas.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao completar o receituário !" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao Salvar Receita!" });
+                return Json(new { stats = "INVALID", message = "Falha ao salvar alterações de receita simples!" });
             }
         }
 
@@ -80,11 +80,11 @@ namespace Hsf_Receitas.Controllers
             try
             {
 
-                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Medication.frx"); 
+                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Medication.frx");
 
                 FastReport.Report r = new FastReport.Report();
 
-                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedication(); 
+                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedication();
                 ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescription();
 
                 r.Report.Dictionary.RegisterBusinessObject(medicationList, "medicationList", 10, true);
@@ -97,7 +97,7 @@ namespace Hsf_Receitas.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError("Erro ao Gerar Report de Medicamentos via FastReporter !" + e.Message);
+                _logger.LogError("Erro ao gerar report do receituário comum via FastReporter !" + e.Message);
                 return RedirectToAction("Index", "Home");
 
             }
@@ -110,20 +110,20 @@ namespace Hsf_Receitas.Controllers
             try
             {
 
-                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Medication.frx"); 
+                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Medication.frx");
 
                 FastReport.Report r = new FastReport.Report();
 
-                ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescriptionsForId(id); 
-                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedicationPrescriptions(id); 
+                ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescriptionsForId(id);
+                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedicationPrescriptions(id);
 
-                r.Report.Load(reportFile); 
+                r.Report.Load(reportFile);
                 r.Report.Dictionary.RegisterBusinessObject(prescriptionList, "prescriptionList", 10, true);
                 r.Report.Dictionary.RegisterBusinessObject(medicationList, "medicationList", 10, true);
                 r.Prepare();
 
                 PDFSimpleExport pdfExport = new PDFSimpleExport();
-                using MemoryStream ms = new MemoryStream(); 
+                using MemoryStream ms = new MemoryStream();
 
                 pdfExport.Export(r, ms);
 
@@ -135,7 +135,7 @@ namespace Hsf_Receitas.Controllers
             catch (Exception e)
             {
 
-                _logger.LogError("Erro ao Gerar Receita em PDF !" + e.Message);
+                _logger.LogError("Erro ao gerar receita em PDF !" + e.Message);
                 return RedirectToAction("Index", "Home");
 
             }

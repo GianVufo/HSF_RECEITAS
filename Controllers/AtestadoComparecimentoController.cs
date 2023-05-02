@@ -13,7 +13,7 @@ namespace Hsf_Receitas.Controllers
     public class AtestadoComparecimentoController : Controller
     {
         private readonly ILogger<AtestadoComparecimentoController> _logger;
-         private readonly IWebHostEnvironment _environment;
+        private readonly IWebHostEnvironment _environment;
         private readonly MedicacaoServices _MedicacaoServices;
         private readonly ReceituarioServices _ReceituarioServices;
         private readonly AtestadoComparecimentoServices _AtestadoComparecimentoServices;
@@ -21,7 +21,7 @@ namespace Hsf_Receitas.Controllers
         public AtestadoComparecimentoController(ILogger<AtestadoComparecimentoController> logger, IWebHostEnvironment environment, ReceituarioServices receituarioServices, MedicacaoServices medicacaoServices, AtestadoComparecimentoServices atestadoComparecimentoServices)
         {
             _logger = logger;
-            _environment = environment; 
+            _environment = environment;
             _ReceituarioServices = receituarioServices;
             _MedicacaoServices = medicacaoServices;
             _AtestadoComparecimentoServices = atestadoComparecimentoServices;
@@ -36,14 +36,17 @@ namespace Hsf_Receitas.Controllers
 
         public IActionResult ATCRegister(AtestadoComparecimento novoATC)
         {
-            try {
+            try
+            {
 
                 AtestadoComparecimentoServices atcServ = new AtestadoComparecimentoServices();
                 atcServ.AddATC(novoATC);
 
-                return Json(new { stats = "OK"});
+                return Json(new { stats = "OK" });
 
-            }catch (Exception e){
+            }
+            catch (Exception e)
+            {
                 _logger.LogError("Erro ao adicionar atestado de comparecimento!" + e.Message);
                 return Json(new { stats = "INVALID", message = "Falha ao gerar atestado de comparecimento!" });
             }
@@ -52,27 +55,6 @@ namespace Hsf_Receitas.Controllers
         public IActionResult ATCPrescription()
         {
             return View();
-        }
-
-        [HttpPost]
-        public IActionResult ATCPrescription(Receituario novaReceita, int id)
-        {
-            try
-            {
-                ReceituarioServices recServ = new ReceituarioServices();
-                recServ.AddReceita(novaReceita);
-
-                id = novaReceita.Id;
-
-                return Json(new { stats = "OK", id = id });
-
-            }
-            catch (Exception e)
-            {
-                _logger.LogError("Erro ao adicionar receita!" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao cadastrar Receita!" });
-            }
-
         }
 
         public IActionResult ATCCompletePrescription(int id)
@@ -93,8 +75,8 @@ namespace Hsf_Receitas.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError("Erro ao completar o receituário !" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao Salvar Receita!" });
+                _logger.LogError("Erro ao completar o receituário do atestado de comparecimento!" + e.Message);
+                return Json(new { stats = "INVALID", message = "Falha ao salvar alterações na receita do atestado de comprecimento!" });
             }
         }
 
@@ -104,11 +86,11 @@ namespace Hsf_Receitas.Controllers
             try
             {
 
-                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Rec_Atc.frx.frx"); 
+                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Rec_Atc.frx.frx");
 
                 FastReport.Report r = new FastReport.Report();
 
-                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedication(); 
+                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedication();
                 ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescription();
                 ICollection<AtestadoComparecimento> atcList = _AtestadoComparecimentoServices.ListATC();
 
@@ -123,7 +105,7 @@ namespace Hsf_Receitas.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError("Erro ao Gerar Report de Medicamentos via FastReporter !" + e.Message);
+                _logger.LogError("Erro ao gerar report da receita + atestado de comparecimento via FastReporter !" + e.Message);
                 return RedirectToAction("Index", "Home");
 
             }
@@ -136,22 +118,22 @@ namespace Hsf_Receitas.Controllers
             try
             {
 
-                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Rec_Atc.frx"); 
+                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Rec_Atc.frx");
 
                 FastReport.Report r = new FastReport.Report();
 
-                ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescriptionsForId(id); 
-                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedicationPrescriptions(id); 
-                ICollection<AtestadoComparecimento> atcList = _AtestadoComparecimentoServices.ListATCPrescriptions(id); 
+                ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescriptionsForId(id);
+                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedicationPrescriptions(id);
+                ICollection<AtestadoComparecimento> atcList = _AtestadoComparecimentoServices.ListATCPrescriptions(id);
 
-                r.Report.Load(reportFile); 
+                r.Report.Load(reportFile);
                 r.Report.Dictionary.RegisterBusinessObject(prescriptionList, "prescriptionList", 10, true);
                 r.Report.Dictionary.RegisterBusinessObject(medicationList, "medicationList", 10, true);
                 r.Report.Dictionary.RegisterBusinessObject(atcList, "atcList", 10, true);
                 r.Prepare();
 
                 PDFSimpleExport pdfExport = new PDFSimpleExport();
-                using MemoryStream ms = new MemoryStream(); 
+                using MemoryStream ms = new MemoryStream();
 
                 pdfExport.Export(r, ms);
 
@@ -163,7 +145,7 @@ namespace Hsf_Receitas.Controllers
             catch (Exception e)
             {
 
-                _logger.LogError("Erro ao Gerar Receita em PDF !" + e.Message);
+                _logger.LogError("Erro ao gerar receita + atestado de comparecimento em PDF !" + e.Message);
                 return RedirectToAction("Index", "Home");
 
             }

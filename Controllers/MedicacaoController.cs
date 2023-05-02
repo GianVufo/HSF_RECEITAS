@@ -16,11 +16,6 @@ namespace Hsf_Receitas.Controllers
             _logger = logger;
         }
 
-        public IActionResult MedicationRegister()
-        {
-            return View();
-        }
-
         [HttpPost]
 
         public IActionResult MedicationRegister(Medicacao novaMedicacao)
@@ -33,7 +28,7 @@ namespace Hsf_Receitas.Controllers
                 return Json(new { stats = "OK"});
 
             }catch (Exception e){
-                _logger.LogError("Erro ao Adicionar Medicamento!" + e.Message);
+                _logger.LogError("Erro ao adicionar medicamento!" + e.Message);
                 return Json(new { stats = "INVALID", message = "Falha ao inserir medicamento!" });
             }
         }

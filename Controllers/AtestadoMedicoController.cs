@@ -22,7 +22,7 @@ namespace Hsf_Receitas.Controllers
         public AtestadoMedicoController(ILogger<ReceituarioController> logger, IWebHostEnvironment environment, ReceituarioServices receituarioServices, MedicacaoServices medicacaoServices, AtestadoMedicoServices atestadoMedicoServices)
         {
             _logger = logger;
-            _environment = environment; 
+            _environment = environment;
             _ReceituarioServices = receituarioServices;
             _MedicacaoServices = medicacaoServices;
             _AtestadoMedicoServices = atestadoMedicoServices;
@@ -37,14 +37,17 @@ namespace Hsf_Receitas.Controllers
 
         public IActionResult ATMRegister(AtestadoMedico novoATM)
         {
-            try {
+            try
+            {
 
                 AtestadoMedicoServices medServ = new AtestadoMedicoServices();
                 medServ.AddATM(novoATM);
 
-                return Json(new { stats = "OK"});
+                return Json(new { stats = "OK" });
 
-            }catch (Exception e){
+            }
+            catch (Exception e)
+            {
                 _logger.LogError("Erro ao adicionar atestado médico!" + e.Message);
                 return Json(new { stats = "INVALID", message = "Falha ao gerar atestado médico!" });
             }
@@ -53,27 +56,6 @@ namespace Hsf_Receitas.Controllers
         public IActionResult ATMPrescription()
         {
             return View();
-        }
-
-        [HttpPost]
-        public IActionResult ATMPrescription(Receituario novaReceita, int id)
-        {
-            try
-            {
-                ReceituarioServices recServ = new ReceituarioServices();
-                recServ.AddReceita(novaReceita);
-
-                id = novaReceita.Id;
-
-                return Json(new { stats = "OK", id = id });
-
-            }
-            catch (Exception e)
-            {
-                _logger.LogError("Erro ao adicionar receita!" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao cadastrar Receita!" });
-            }
-
         }
 
         public IActionResult ATMCompletePrescription(int id)
@@ -94,8 +76,8 @@ namespace Hsf_Receitas.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError("Erro ao completar o receituário !" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao Salvar Receita!" });
+                _logger.LogError("Erro ao completar o receituário + atestado médico !" + e.Message);
+                return Json(new { stats = "INVALID", message = "falha ao salvar alterações na receita do atestado médico!" });
             }
         }
 
@@ -105,11 +87,11 @@ namespace Hsf_Receitas.Controllers
             try
             {
 
-                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\ATM_Report.frx"); 
+                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\ATM_Report.frx");
 
                 FastReport.Report r = new FastReport.Report();
 
-                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedication(); 
+                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedication();
                 ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescription();
                 ICollection<AtestadoMedico> atmList = _AtestadoMedicoServices.ListATM();
 
@@ -124,7 +106,7 @@ namespace Hsf_Receitas.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError("Erro ao Gerar Report de Medicamentos via FastReporter !" + e.Message);
+                _logger.LogError("Erro ao rerar report de receituário + Atestado médico via FastReporter !" + e.Message);
                 return RedirectToAction("Index", "Home");
 
             }
@@ -137,22 +119,22 @@ namespace Hsf_Receitas.Controllers
             try
             {
 
-                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Rec_Atm.frx"); 
+                string reportFile = Path.Combine(_environment.WebRootPath, @"Print_Files\Rec_Atm.frx");
 
                 FastReport.Report r = new FastReport.Report();
 
-                ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescriptionsForId(id); 
-                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedicationPrescriptions(id); 
-                ICollection<AtestadoMedico> atmList = _AtestadoMedicoServices.ListATMPrescriptions(id); 
+                ICollection<Receituario> prescriptionList = _ReceituarioServices.ListPrescriptionsForId(id);
+                ICollection<Medicacao> medicationList = _MedicacaoServices.ListMedicationPrescriptions(id);
+                ICollection<AtestadoMedico> atmList = _AtestadoMedicoServices.ListATMPrescriptions(id);
 
-                r.Report.Load(reportFile); 
+                r.Report.Load(reportFile);
                 r.Report.Dictionary.RegisterBusinessObject(prescriptionList, "prescriptionList", 10, true);
                 r.Report.Dictionary.RegisterBusinessObject(medicationList, "medicationList", 10, true);
                 r.Report.Dictionary.RegisterBusinessObject(atmList, "atmList", 10, true);
                 r.Prepare();
 
                 PDFSimpleExport pdfExport = new PDFSimpleExport();
-                using MemoryStream ms = new MemoryStream(); 
+                using MemoryStream ms = new MemoryStream();
 
                 pdfExport.Export(r, ms);
 
@@ -164,7 +146,7 @@ namespace Hsf_Receitas.Controllers
             catch (Exception e)
             {
 
-                _logger.LogError("Erro ao Gerar Receita em PDF !" + e.Message);
+                _logger.LogError("Erro ao gerar Receita + atestado médico em PDF !" + e.Message);
                 return RedirectToAction("Index", "Home");
 
             }

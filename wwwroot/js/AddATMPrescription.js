@@ -7,7 +7,7 @@ function AddATMPrescription() {
     DateOfMedicalAppoiment: $("#atm-dataAppoiment").val(),
   };
 
-  $.post("/AtestadoMedico/ATMPrescription", properties)
+  $.post("/Receituario/Prescription", properties)
 
     .done(function (output) {
       if (output.id != null) {
