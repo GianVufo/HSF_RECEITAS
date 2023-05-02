@@ -27,9 +27,9 @@ namespace Hsf_Receitas.Services
 
             Receituario rec = new Receituario();
 
-            List<AtestadoMedico> foundMedication = database.AtestadosMedico.Where(m => m.ReceituarioId == id).ToList();
+            List<AtestadoMedico> foundATM = database.AtestadosMedico.Where(m => m.ReceituarioId == id).ToList();
 
-            return foundMedication;
+            return foundATM;
         }
     }
 }

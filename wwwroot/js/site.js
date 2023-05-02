@@ -10,8 +10,20 @@ function inserirRemediosATM() {
 
 }
 
+function inserirRemediosATC() {
+  var medicId = document.getElementById("atc-up-prescriptionId").value;
+  document.getElementById("atc-receituarioId-medication").value = medicId;
+
+}
+
 function ATM()
 {
   var pacientName = document.getElementById("atm-up-pacientName").value;
   document.getElementById("atm-pacientName").value = pacientName;
+}
+
+function ATC()
+{
+  var pacientName = document.getElementById("atc-up-pacientName").value;
+  document.getElementById("atc-pacientName").value = pacientName;
 }

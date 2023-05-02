@@ -17,6 +17,32 @@ namespace Hsf_Receitas.Migrations
                 .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Hsf_Receitas.Models.AtestadoComparecimento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("PacientName")
+                        .IsRequired()
+                        .HasColumnType("varchar(80) CHARACTER SET utf8mb4")
+                        .HasMaxLength(80);
+
+                    b.Property<int>("ReceituarioId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Turno")
+                        .IsRequired()
+                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReceituarioId");
+
+                    b.ToTable("ATC");
+                });
+
             modelBuilder.Entity("Hsf_Receitas.Models.AtestadoMedico", b =>
                 {
                     b.Property<int>("Id")
@@ -110,6 +136,15 @@ namespace Hsf_Receitas.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Receitas");
+                });
+
+            modelBuilder.Entity("Hsf_Receitas.Models.AtestadoComparecimento", b =>
+                {
+                    b.HasOne("Hsf_Receitas.Models.Receituario", "Receituario")
+                        .WithMany()
+                        .HasForeignKey("ReceituarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Hsf_Receitas.Models.AtestadoMedico", b =>

@@ -14,7 +14,7 @@ namespace Hsf_Receitas.Models
         [Required(ErrorMessage = " Nome do médico é obrigatório! "), StringLength(80)]
         public string DoctorName { get; set; }
 
-        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "O campo Data do atendimento obrigatório"), DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateOfMedicalAppoiment { get; set; }
 

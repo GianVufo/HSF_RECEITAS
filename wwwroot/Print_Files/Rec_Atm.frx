@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="04/25/2023 17:28:58" ReportInfo.Modified="04/28/2023 15:31:50" ReportInfo.CreatorVersion="2023.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/25/2023 17:28:58" ReportInfo.Modified="05/02/2023 14:34:26" ReportInfo.CreatorVersion="2023.1.0.0">
   <Dictionary>
     <BusinessObjectDataSource Name="medicationList" ReferenceName="medicationList" DataType="null" Enabled="true">
       <Column Name="Id" DataType="System.Int32"/>
@@ -56,7 +56,7 @@
       <TextObject Name="Text7" Left="28.35" Top="28.35" Width="160.65" Height="37.8" Text="NOME DO PACIENTE :" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text8" Left="179.55" Top="28.35" Width="274.05" Height="37.8" Text="[prescriptionList.PacientName]" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text9" Left="28.35" Top="75.6" Width="189" Height="37.8" Text="DATA DO ATENDIMENTO :" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
-      <TextObject Name="Text10" Left="207.9" Top="75.6" Width="245.7" Height="37.8" Text="[prescriptionList.DateOfMedicalAppoiment]" Format="Date" Format.Format="d" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
+      <TextObject Name="Text10" Left="207.9" Top="75.6" Width="245.7" Height="37.8" Text="[prescriptionList.DateOfMedicalAppoiment]" Format="Date" Format.Format="dd/MM/yyyy" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text13" Left="28.35" Top="122.85" Width="160.65" Height="37.8" Text="NOME DO MÉDICO :" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text14" Left="170.1" Top="122.85" Width="292.95" Height="37.8" Text="[prescriptionList.DoctorName]" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <ShapeObject Name="Shape3" Left="18.9" Top="122.85" Width="444.15" Height="37.8" Border.Color="0, 120, 215" Shape="RoundRectangle"/>
@@ -116,7 +116,7 @@
         <LineObject Name="Line14" Left="841.05" Top="18.9" Width="179.55" Border.Color="Highlight"/>
         <LineObject Name="Line15" Left="841.05" Top="47.25" Width="179.55" Border.Color="Highlight"/>
         <TextObject Name="Text45" Left="841.05" Width="179.55" Height="18.9" Text="[atmList.CID]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" TextFill.Color="Highlight"/>
-        <TextObject Name="Text46" Left="841.05" Top="28.35" Width="179.55" Height="18.9" Text="[prescriptionList.DateOfMedicalAppoiment]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" TextFill.Color="Highlight"/>
+        <TextObject Name="Text46" Left="841.05" Top="28.35" Width="179.55" Height="18.9" Text="[prescriptionList.DateOfMedicalAppoiment]" Format="Date" Format.Format="dd/MM/yyyy" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" TextFill.Color="Highlight"/>
       </DataFooterBand>
     </DataBand>
     <PageFooterBand Name="PageFooter1" Top="478.29" Width="1047.06" Height="75.6">

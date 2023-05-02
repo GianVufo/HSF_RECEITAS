@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="04/27/2023 13:40:31" ReportInfo.Modified="04/27/2023 14:17:33" ReportInfo.CreatorVersion="2023.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/27/2023 13:40:31" ReportInfo.Modified="05/02/2023 12:10:25" ReportInfo.CreatorVersion="2023.1.0.0">
   <Dictionary>
     <BusinessObjectDataSource Name="medicationList" ReferenceName="medicationList" DataType="null" Enabled="true">
       <Column Name="Id" DataType="System.Int32"/>
@@ -31,18 +31,18 @@
       <TextObject Name="Text2" Left="151.2" Top="37.8" Width="302.4" Height="28.35" Text="FUNDAÇÃO DE SAÚDE TRÊS MARIAS" HorzAlign="Center" Font="Times New Roman, 11pt, style=Bold, Underline" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text3" Left="151.2" Top="56.7" Width="302.4" Height="18.9" Text="HOSPITAL SÃO FRANCISCO" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 11pt, style=Bold" TextFill.Color="0, 120, 215"/>
     </PageHeaderBand>
-    <DataBand Name="Data1" Top="89.05" Width="484.22" Height="236.25">
+    <DataBand Name="Data1" Top="89.99" Width="484.22" Height="236.25">
       <ShapeObject Name="Shape1" Left="18.9" Top="18.9" Width="444.15" Height="37.8" Border.Color="0, 120, 215" Shape="RoundRectangle"/>
       <ShapeObject Name="Shape2" Left="18.9" Top="66.15" Width="444.15" Height="37.8" Border.Color="0, 120, 215" Shape="RoundRectangle"/>
       <TextObject Name="Text7" Left="28.35" Top="18.9" Width="160.65" Height="37.8" Text="NOME DO PACIENTE :" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text8" Left="179.55" Top="18.9" Width="274.05" Height="37.8" Text="[prescriptionList.PacientName]" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text9" Left="28.35" Top="66.15" Width="189" Height="37.8" Text="DATA DO ATENDIMENTO :" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
-      <TextObject Name="Text10" Left="207.9" Top="66.15" Width="245.7" Height="37.8" Text="[prescriptionList.DateOfMedicalAppoiment]" Format="Date" Format.Format="d" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
+      <TextObject Name="Text10" Left="207.9" Top="66.15" Width="245.7" Height="37.8" Text="[prescriptionList.DateOfMedicalAppoiment]" Format="Date" Format.Format="dd/MM/yyyy" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text13" Left="28.35" Top="113.4" Width="160.65" Height="37.8" Text="NOME DO MÉDICO :" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text14" Left="170.1" Top="113.4" Width="292.95" Height="37.8" Text="[prescriptionList.DoctorName]" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <ShapeObject Name="Shape3" Left="18.9" Top="113.4" Width="444.15" Height="37.8" Border.Color="0, 120, 215" Shape="RoundRectangle"/>
       <TextObject Name="Text21" Left="28.35" Top="179.55" Width="434.7" Height="56.7" Text="MEDICAMENTOS :" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 18pt, style=Bold" TextFill.Color="0, 120, 215"/>
-      <DataBand Name="Data2" Top="361.65" Width="484.22" Height="18.9" DataSource="medicationList">
+      <DataBand Name="Data2" Top="364.46" Width="484.22" Height="18.9" DataSource="medicationList">
         <TextObject Name="Text15" Width="94.5" Height="18.9" Text="[medicationList.MedicationName]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt" TextFill.Color="0, 120, 215"/>
         <TextObject Name="Text16" Left="94.5" Width="103.95" Height="18.9" Text="[medicationList.MedicationDosage]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt" TextFill.Color="0, 120, 215"/>
         <TextObject Name="Text17" Left="198.45" Width="94.5" Height="18.9" Text="[medicationList.MedicationMethodUse]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt" TextFill.Color="0, 120, 215"/>
@@ -55,7 +55,7 @@
         <LineObject Name="Line9" Left="387.45" Top="18.9" Height="-18.9" Border.Color="Highlight"/>
         <LineObject Name="Line10" Top="18.9" Height="-18.9" Border.Color="Highlight"/>
         <LineObject Name="Line11" Left="481.95" Top="18.9" Height="-18.9" Border.Color="Highlight"/>
-        <DataHeaderBand Name="DataHeader1" Top="329.3" Width="484.22" Height="28.35">
+        <DataHeaderBand Name="DataHeader1" Top="331.18" Width="484.22" Height="28.35">
           <TextObject Name="Text18" Width="94.5" Height="28.35" Text="NOME " HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold" TextFill.Color="0, 120, 215"/>
           <TextObject Name="Text19" Left="94.5" Width="103.95" Height="28.35" Text="DOSAGEM&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold" TextFill.Color="0, 120, 215"/>
           <TextObject Name="Text20" Left="198.45" Width="94.5" Height="28.35" Text="USO&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold" TextFill.Color="0, 120, 215"/>
@@ -70,12 +70,12 @@
           <LineObject Name="Line17" Left="292.95" Top="28.35" Height="-28.35" Border.Color="Highlight"/>
           <LineObject Name="Line18" Left="387.45" Top="28.35" Height="-28.35" Border.Color="Highlight"/>
         </DataHeaderBand>
-        <DataFooterBand Name="DataFooter1" Top="384.55" Width="484.22" Height="47.25">
+        <DataFooterBand Name="DataFooter1" Top="388.3" Width="484.22" Height="47.25">
           <TextObject Name="Text22" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="Observações :" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
         </DataFooterBand>
       </DataBand>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="435.8" Width="484.22" Height="75.6">
+    <PageFooterBand Name="PageFooter1" Top="440.49" Width="484.22" Height="75.6">
       <TextObject Name="Text4" Left="9.45" Top="37.8" Width="463.05" Height="18.9" Text="    BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
       <LineObject Name="Line4" Left="255.15" Top="9.45" Width="207.9" Border.Color="0, 120, 215"/>
       <TextObject Name="Text23" Left="274.05" Top="9.45" Width="170.1" Height="18.9" Text="Assinatura do médico" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8pt" TextFill.Color="0, 120, 215"/>

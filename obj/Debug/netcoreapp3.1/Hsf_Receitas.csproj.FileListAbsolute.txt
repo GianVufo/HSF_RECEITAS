@@ -392,3 +392,7 @@ C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoMedico\_ATMRegister.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoMedico\ATMCompletePrescription.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_MedicationRegisterATM.cshtml.g.cs
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoComparecimento\ATCCompletePrescription.cshtml.g.cs
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoComparecimento\ATCPrescription.cshtml.g.cs
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoComparecimento\_ATCRegister.cshtml.g.cs
+C:\Users\gianluca.vialli\Desktop\Hsf_Receituario\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_MedicationRegisterATC.cshtml.g.cs
