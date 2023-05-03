@@ -27,11 +27,6 @@ namespace Hsf_Receitas.Controllers
             _AtestadoComparecimentoServices = atestadoComparecimentoServices;
         }
 
-        public IActionResult ATCRegister()
-        {
-            return View();
-        }
-
         [HttpPost]
 
         public IActionResult ATCRegister(AtestadoComparecimento novoATC)
@@ -81,7 +76,7 @@ namespace Hsf_Receitas.Controllers
         }
 
         [HttpGet]
-        public IActionResult ATCCreateReport()
+        public IActionResult ATCCreateReport()  
         {
             try
             {

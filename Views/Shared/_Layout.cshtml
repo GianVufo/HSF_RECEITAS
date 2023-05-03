@@ -1,116 +1,88 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="author" content="Gianluca Vialli">
+    <html lang="pt-br">
+        
+        <head>
 
-        <title>@ViewData["Title"] - HSF_Receituario</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="author" content="Gianluca Vialli">
 
-        <link rel="shortcut icon" href="~/icons/logo-hospital.bmp"
-            type="image/x-icon" asp-append-version="true" />
+            <title>@ViewData["Title"] - HSF_Receituario</title>
 
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-            asp-append-version="true" />
+            <link rel="shortcut icon" href="~/icons/logo-hospital.bmp" type="image/x-icon" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/navbarStyle.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/indexStyle.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/receita.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/medicamento.css" asp-append-version="true" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" asp-append-version="true" />
 
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"
-            />
+        </head>
 
-        <link rel="stylesheet" href="~/css/navbarStyle.css"
-            asp-append-version="true" />
+        <body>
 
-        <link rel="stylesheet" href="~/css/indexStyle.css"
-            asp-append-version="true" />
+            <header>
 
-        <link rel="stylesheet" href="~/css/receita.css"
-            asp-append-version="true" />
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-2 logo">
 
-        <link rel="stylesheet" href="~/css/medicamento.css"
-            asp-append-version="true" />
+                    <div class="line1"></div>
 
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-            asp-append-version="true" />
+                    <div class="div-logo">
 
-    </head>
+                        <a asp-action="Index" asp-controller="Home">
+                            <img src="../images/logotipo-hospital-sao-francisco.png" class="logo-img" alt="Logo Hospital São francisco">
+                        </a>
 
-    <body>
-        <header>
+                        <div class="logotipo">
 
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm
-                border-bottom box-shadow mb-2 logo">
+                            <a class="text-logo" asp-controller="Home" asp-action="Index"> <img class="logo-image" src="../icons/caduceu.png" alt=""> HSF - Receituário </a>
 
-                <div class="line1"></div>
-
-                <div class="div-logo">
-
-                    <a asp-action="Index" asp-controller="Home">
-                        <img src="../images/logotipo-hospital-sao-francisco.png"
-                            alt="Logo Hospital São francisco">
-                    </a>
-
-                    <div class="logotipo">
-
-
-                        <a class="text-logo" asp-controller="Home"
-                            asp-action="Index"> <img class="logo-image"
-                                src="../icons/caduceu.png" alt=""> HSF -
-                            Receituário </a>
+                        </div>
 
                     </div>
 
+                </nav>
+
+            </header>
+
+            <main role="main">
+
+                <div class="container-fluid mt-0 mb-0 p-0">
+                    @RenderBody()
                 </div>
 
-            </nav>
+            </main>
 
-        </header>
+            <footer class=" contact container-fluid border-top bg-ligth bg-primary footer">
 
-        <main role="main">
+                <a class="col-md-12" href='https://www.google.com/maps/place/Hospital+S%C3%A3o+Francisco/-18.1995892,-45.2454996,14z/data=!4m6!3m5!1s0xa696124967edf5:0x49e73d2a971ee004!8m2!3d-19.9487189!4d-44.0083423!16s%2Fg%2F11kbfsnwgt'> &copy; 2023 - HSF Receituário - BR 040 - km 438 Brasília/BH, S/N - Bairro: Parque Diadorim - Três Marias - MG - 39205-000 </a>
 
-            @RenderBody()
+                <a href="tel:3837541256"> <span class="material-symbols-outlined"> phone_in_talk </span> (38) 3754-1256 </a>
 
-        </main>
+                <a href="mailto:contato@fstm.org.br"> <span class="material-symbols-outlined"> send </span> contato@fstm.org.br </a>
 
-        <footer class=" contact container-fluid border-top bg-ligth bg-primary
-            footer">
+            </footer>
 
-            <a class="col-md-12"
-                href='https://www.google.com/maps/place/Hospital+S%C3%A3o+Francisco/-18.1995892,-45.2454996,14z/data=!4m6!3m5!1s0xa696124967edf5:0x49e73d2a971ee004!8m2!3d-19.9487189!4d-44.0083423!16s%2Fg%2F11kbfsnwgt'>
-                &copy; 2023 - HSF Receituário - BR 040 - km 438 Brasília/BH,
-                S/N
-                - Bairro: Parque Diadorim - Três Marias - MG - 39205-000
-            </a>
+            <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/js/AddMedication.js" asp-append-version="true"></script>
+            <script src="~/js/EditATMPrescription.js" asp-append-version="true"></script>
+            <script src="~/js/EditATCPrescription.js" asp-append-version="true"></script>
+            <script src="~/js/EditPrescription.js" asp-append-version="true"></script>
+            <script src="~/js/AddPrescription.js" asp-append-version="true"></script>
+            <script src="~/js/AddATMPrescription.js" asp-append-version="true"></script>
+            <script src="~/js/AddATCPrescription.js" asp-append-version="true"></script>
+            <script src="~/js/AddATMMedication.js" asp-append-version="true"></script>
+            <script src="~/js/AddATCMedication.js" asp-append-version="true"></script>
+            <script src="~/js/AddATM.js" asp-append-version="true"></script>
+            <script src="~/js/AddATC.js" asp-append-version="true"></script>
+            
+            @RenderSection("Scripts", required: false)
 
-            <a href="tel:3837541256"> <span
-                    class="material-symbols-outlined"> phone_in_talk </span>
-                (38) 3754-1256 </a>
+        </body>
 
-            <a href="mailto:contato@fstm.org.br"> <span
-                    class="material-symbols-outlined"> send </span>
-                contato@fstm.org.br </a>
-
-
-        </footer>
-
-        <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        <script src="~/js/AddMedication.js" asp-append-version="true"></script>
-        <script src="~/js/EditATMPrescription.js" asp-append-version="true"></script>
-        <script src="~/js/EditATCPrescription.js" asp-append-version="true"></script>
-        <script src="~/js/EditPrescription.js" asp-append-version="true"></script>
-        <script src="~/js/AddPrescription.js" asp-append-version="true"></script>
-        <script src="~/js/AddATMPrescription.js" asp-append-version="true"></script>
-        <script src="~/js/AddATCPrescription.js" asp-append-version="true"></script>
-        <script src="~/js/AddATMMedication.js" asp-append-version="true"></script>
-         <script src="~/js/AddATCMedication.js" asp-append-version="true"></script>
-        <script src="~/js/AddATM.js" asp-append-version="true"></script>
-        <script src="~/js/AddATC.js" asp-append-version="true"></script>
-        
-        @RenderSection("Scripts", required: false)
-
-    </body>
-
-</html>
+    </html>
