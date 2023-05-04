@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Hsf_Receitas.Migrations
 {
-    public partial class HSF_Database : Migration
+    public partial class HSF_Receituario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

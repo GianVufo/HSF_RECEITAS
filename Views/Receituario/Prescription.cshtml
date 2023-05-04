@@ -32,13 +32,13 @@
                             <input id="prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
 
                             <label class="text-primary" for="">Nome do Paciente: </label>
-                            <input type="text" id="pacientName" class="form-control border-primary mb-3 prescription-input" asp-for="PacientName" onblur="ShowPrescription()" required>
-
-                            <label class="text-primary" for="">Nome do Médico: </label>
-                            <input type="text" id="doctorName" class="form-control border-primary mb-3 prescription-input" asp-for="DoctorName" onblur="ShowPrescription()" required>
+                            <input type="text" id="pacientName" class="form-control border-primary mb-3" asp-for="PacientName" onkeyup="ShowPrescriptionPacient()" required>
 
                             <label class="text-primary" for="">Data da consulta: </label>
-                            <input type="date" id="dataAppoiment" class="form-control border-primary prescription-input" asp-for="DateOfMedicalAppoiment" onblur="ShowPrescription()" required>
+                            <input type="date" id="dataAppoiment" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" onblur="ShowPrescriptionData()" required>
+
+                            <label class="text-primary" for="">Nome do Médico: </label>
+                            <input type="text" id="doctorName" class="form-control border-primary" asp-for="DoctorName" onkeyup="ShowPrescriptionMedic()" required>
 
                         </div>
 
@@ -59,7 +59,7 @@
 
                     </div>
 
-                    <button type="submit" title="Gerar Receita" class="btn btn-md btn-primary btn-printer mt-3"> <span class="material-symbols-outlined"> save </span> Salvar </button>
+                    <button type="submit" title="Gerar Receita" onclick="ShowPrescriptionInEditPrescription ()" class="btn btn-md btn-primary btn-printer mt-3"> <span class="material-symbols-outlined"> save </span> Salvar </button>
 
                 </form>
 
@@ -69,7 +69,7 @@
 
     </div>
 
-    <div class="card show-prescription">
+    <div class="show-prescription">
 
         <div class="header-show-prescription">
 
@@ -79,7 +79,7 @@
 
             </div>
 
-            <div class="logo">
+            <div class="show-logo">
 
                 <h1>RECEITUÁRIO</h1>
                 <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
