@@ -8,7 +8,7 @@
     Medicacao medic = new Medicacao();
     HSFContext database = new HSFContext();
 
-    List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId ==Model.Id).ToList();
+    List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId == Model.Id).ToList();
 
     List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id == Model.Id).ToList();
 
@@ -17,7 +17,7 @@
 
 <div class="prescription container-fluid">
 
-    <div class="card card-prescription mb-4 p-0 col-md-6">
+    <div class="card card-prescription mb-4 p-0 col-md-5">
 
         <div class="card-header text-light">
 
@@ -39,7 +39,7 @@
 
                         <div class="row medicine-card-2">
 
-                            <div class="card-body card-body-edit-prescription col-md-8">
+                            <div class="card-body card-body-edit-prescription">
 
                                 <input id="up-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
 
@@ -53,11 +53,11 @@
                                 <input type="date" id="up-dataAppoiment" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" required>
 
                                 <p class="text-danger">Salve as alterações antes de imprimir.</p>
+                                
+                                <div class="edit-button col-md-3">
+                                    <button type="submit" class="btn btn-md btn-primary mt-3">Salvar</button>
+                                </div>
 
-                            </div>
-
-                            <div class="edit-button col-md-3">
-                                <button type="submit" class="btn btn-md btn-primary">Salvar</button>
                             </div>
 
                         </div>
@@ -93,7 +93,7 @@
 
     @if (prescriptionList.Count() > 0)
     {
-        <div class=" show-prescription">
+        <div class=" show-prescription col-md-5">
 
         <div class="header-show-prescription">
 
@@ -126,9 +126,9 @@
             }
             <div class="medicacoes">
 
-                <h3 class="text-center text-primary font-weight-bold">MEDICAMENTOS :</h3>
+                <h3 class="text-center text-primary font-weight-bold mb-5">MEDICAMENTOS :</h3>
 
-                <table class="text-primary table-medicament" id="medic-list">
+                <table class="text-primary table-medicament table-medicament-bottom mt-1" id="medic-list">
 
                     <thead class="text-primart text-center font-weight-bold border-medic">
 
@@ -150,15 +150,15 @@
                         {
                             <tr class="border-medic">
 
-                                <td class="text-center class="border-medic"">@item.MedicationName</td>
+                                <td class="text-center border-medic p-1">@item.MedicationName</td>
 
-                                <td class="border-medic">@item.MedicationDosage</td>
+                                <td class="border-medic p-1">@item.MedicationDosage</td>
 
-                                <td class="border-medic">@item.MedicationMethodUse</td>
+                                <td class="border-medic p-1">@item.MedicationMethodUse</td>
 
-                                <td class="border-medic">@item.UseTime - dias</td>
+                                <td class="border-medic p-1">@item.UseTime - dias</td>
 
-                                <td class="border-medic">À cada @item.DoseTime - horas</td>
+                                <td class="border-medic p-1">À cada @item.DoseTime - horas</td>
 
                             </tr>
                         }
@@ -217,3 +217,49 @@
 </div>
 
 <!--Finish Medication Modal-->
+
+<!--Start Delete Medication Modal-->
+@foreach (var item in medicList)
+{
+
+    <div class="modal fade" id="deleteMedication-@item.Id" tabindex="-1" role="dialog" aria-labelledby="deleteMedicationTitle" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
+            <div class="modal-content">
+
+                <form action="">
+                    <div class="modal-header text-center">
+
+                        <h3 class="modal-title text-danger text-center" id="deleteMedicationTitle">Alerta!</h3>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                            <span aria-hidden="true">&times;</span>
+
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body p-3">
+                        <span>Tem certeza que deseja excluir o medicamento <b>@item.MedicationName</b> desta receita?</span>
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button class="btn btn-outline-danger btn-sm" name="decision" type="submit" value="Delete" title="Excluir"><i style="font-size: 20px;" class="bi bi-person-fill-x"></i></button>
+                        <button class="btn btn-outline-secondary btn-sm" name="decision" type="submit" value="Cancel" title="Cancelar"><i style="font-size: 20px;" class="bi bi-arrow-return-left"></i></button>
+
+                    </div>
+                    
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+}
+
+<!--Finish Delete Medication Modal-->
