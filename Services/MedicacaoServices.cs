@@ -15,6 +15,16 @@ namespace Hsf_Receitas.Services
             database.SaveChanges();
         }
 
+        public void DelMedication(int id)
+        {
+            using HSFContext dataBase = new HSFContext();
+            
+            Medicacao foundMedication = dataBase.Medicamentos.Find(id);
+
+            dataBase.Medicamentos.Remove(foundMedication);
+            dataBase.SaveChanges();
+        }
+
         public List<Medicacao> ListMedication()
         {
             using HSFContext database = new HSFContext();
@@ -30,6 +40,12 @@ namespace Hsf_Receitas.Services
             List<Medicacao> foundMedication = database.Medicamentos.Where(m => m.ReceituarioId == id).ToList();
 
             return foundMedication;
+        }
+
+        public Medicacao SearchForId(int id)
+        {
+            using HSFContext dataBase = new HSFContext();
+            return dataBase.Medicamentos.Find(id);
         }
 
     }

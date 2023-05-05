@@ -610,7 +610,6 @@ C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoMedico\ATMPrescription.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\AtestadoMedico\_ATMRegister.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_ListaDeMedicacao.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_MedicationRegister.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_MedicationRegisterATC.cshtml.g.cs
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_MedicationRegisterATM.cshtml.g.cs
@@ -629,4 +628,4 @@ C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Hsf_Receit
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Hsf_Receitas.pdb
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Hsf_Receitas.genruntimeconfig.cache
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\libman.json
-C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_DeleteMedication.cshtml.g.cs
+C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\obj\Debug\netcoreapp3.1\Razor\Views\Medicacao\_ListaDeMedicacao.cshtml.g.cs

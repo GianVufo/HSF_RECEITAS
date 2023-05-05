@@ -41,19 +41,23 @@
 
                             <div class="card-body card-body-edit-prescription">
 
-                                <input id="up-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
+                                <input id="up-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id"
+                                    disabled>
 
                                 <label class="text-primary" for="">Nome do Paciente: </label>
-                                <input type="text" id="up-pacientName" class="form-control border-primary mb-3" asp-for="PacientName" required>
+                                <input type="text" id="up-pacientName" class="form-control border-primary mb-3"
+                                    asp-for="PacientName" required>
 
                                 <label class="text-primary" for="">Nome do Médico: </label>
-                                <input type="text" id="up-doctorName" class="form-control border-primary mb-3" asp-for="DoctorName" required>
+                                <input type="text" id="up-doctorName" class="form-control border-primary mb-3"
+                                    asp-for="DoctorName" required>
 
                                 <label class="text-primary" for="">Data da consulta: </label>
-                                <input type="date" id="up-dataAppoiment" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" required>
+                                <input type="date" id="up-dataAppoiment" class="form-control border-primary mb-3"
+                                    asp-for="DateOfMedicalAppoiment" required>
 
                                 <p class="text-danger">Salve as alterações antes de imprimir.</p>
-                                
+
                                 <div class="edit-button col-md-3">
                                     <button type="submit" class="btn btn-md btn-primary mt-3">Salvar</button>
                                 </div>
@@ -76,13 +80,18 @@
                                 @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
                             </div>
 
-                            <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id" title="Inserir medicamentos à receita" onclick=" inserirRemedios()" class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos</button>
+                            <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id"
+                                title="Inserir medicamentos à receita" onclick=" inserirRemedios()"
+                                class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined">
+                                    syringe </span> Adicionar Medicamentos</button>
 
                         </div>
 
                     </div>
 
-                    <a href="/Receituario/PrescriptionPrintToPDF?id=@Model.Id" target="_blank" title="Imprimir receituário" class="btn btn-md btn-secondary btn-printer-edit mt-3" href=""><span class="material-symbols-outlined"> print </span> Imprimir </a>
+                    <a href="/Receituario/PrescriptionPrintToPDF?id=@Model.Id" target="_blank"
+                        title="Imprimir receituário" class="btn btn-md btn-secondary btn-printer-edit mt-3"
+                        href=""><span class="material-symbols-outlined"> print </span> Imprimir </a>
 
                 </form>
 
@@ -95,90 +104,100 @@
     {
         <div class=" show-prescription col-md-5">
 
-        <div class="header-show-prescription">
+            <div class="header-show-prescription">
 
-            <div class="header-img">
+                <div class="header-img">
 
-                <img src="../images/logotipo-hospital-sao-francisco.png" alt="logotipo da vizualização do receituário comum">
-
-            </div>
-
-            <div class="show-logo">
-
-                <h1>RECEITUÁRIO</h1>
-                <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
-                <h2>HOSPITAL SÃO FRANCISCO</h2>
-
-            </div>
-
-        </div>
-        
-        <div class="show-body">
-            @foreach (var item in prescriptionList)
-            {
-                <div class="prescription-data">
-
-                    <div class="inputs"><p class="m-0 p-0">NOME DO PACIENTE :</p><span class="content">@item.PacientName</span></div>
-                    <div class="inputs"><p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span class="content">@item.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span></div>
-                    <div class="inputs"><p class="m-0 p-0">NOME DO MÉDICO :</p><span class="content">@item.DoctorName</span></div>
+                    <img src="../images/logotipo-hospital-sao-francisco.png"
+                    alt="logotipo da vizualização do receituário comum">
 
                 </div>
-            }
-            <div class="medicacoes">
 
-                <h3 class="text-center text-primary font-weight-bold mb-5">MEDICAMENTOS :</h3>
+                <div class="show-logo">
 
-                <table class="text-primary table-medicament table-medicament-bottom mt-1" id="medic-list">
+                    <h1>RECEITUÁRIO</h1>
+                    <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+                    <h2>HOSPITAL SÃO FRANCISCO</h2>
 
-                    <thead class="text-primart text-center font-weight-bold border-medic">
+                </div>
 
-                        <tr>
+            </div>
 
-                            <th class="border-medic p-1">NOME</th>
-                            <th class="border-medic p-1">DOSAGEM</th>
-                            <th class="border-medic p-1">USO</th>
-                            <th class="border-medic p-1">TEMPO-(Dias)</th>
-                            <th class="border-medic p-1">A CADA-(Hrs)</th>
+            <div class="show-body">
+                @foreach (var item in prescriptionList)
+                {
+                    <div class="prescription-data">
 
-                        </tr>
+                        <div class="inputs">
+                            <p class="m-0 p-0">NOME DO PACIENTE :</p><span class="content">@item.PacientName</span>
+                        </div>
+                        <div class="inputs">
+                            <p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span
+                        class="content">@item.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="inputs">
+                            <p class="m-0 p-0">NOME DO MÉDICO :</p><span class="content">@item.DoctorName</span>
+                        </div>
 
-                    </thead>
+                    </div>
+                }
+                <div class="medicacoes">
 
-                    <tbody class="text-center">
+                    <h3 class="text-center text-primary font-weight-bold mb-5">MEDICAMENTOS :</h3>
 
-                        @foreach (var item in medicList)
-                        {
-                            <tr class="border-medic">
+                    <table class="text-primary table-medicament table-medicament-bottom mt-1" id="medic-list">
 
-                                <td class="text-center border-medic p-1">@item.MedicationName</td>
+                        <thead class="text-primart text-center font-weight-bold border-medic">
 
-                                <td class="border-medic p-1">@item.MedicationDosage</td>
+                            <tr>
 
-                                <td class="border-medic p-1">@item.MedicationMethodUse</td>
-
-                                <td class="border-medic p-1">@item.UseTime - dias</td>
-
-                                <td class="border-medic p-1">À cada @item.DoseTime - horas</td>
+                                <th class="border-medic p-1">NOME</th>
+                                <th class="border-medic p-1">DOSAGEM</th>
+                                <th class="border-medic p-1">USO</th>
+                                <th class="border-medic p-1">TEMPO-(Dias)</th>
+                                <th class="border-medic p-1">A CADA-(Hrs)</th>
 
                             </tr>
-                        }
 
-                    </tbody>
+                        </thead>
 
-                </table>
+                        <tbody class="text-center">
+
+                            @foreach (var item in medicList)
+                            {
+                                <tr class="border-medic">
+
+                                    <td class="text-center border-medic p-1">@item.MedicationName</td>
+
+                                    <td class="border-medic p-1">@item.MedicationDosage</td>
+
+                                    <td class="border-medic p-1">@item.MedicationMethodUse</td>
+
+                                    <td class="border-medic p-1">@item.UseTime - dias</td>
+
+                                    <td class="border-medic p-1">À cada @item.DoseTime - horas</td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="show-footer">
+                <P>BR 040 - KM 438 - BEASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-12-56</P>
+                <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+                <div class="line"></div>
             </div>
 
         </div>
-        
-        <div class="show-footer">
-            <P>BR 040 - KM 438 - BEASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-12-56</P>
-            <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
-            <div class="line"></div>
-        </div>
 
-    </div>
-
-    }else {
+    }
+    else
+    {
         <div class="alert alert-warning w-100 text-center alert-medication" role="alert">
             Não existe uma receita para mostrar !
         </div>
@@ -188,7 +207,8 @@
 
 <!--Start Medication Modal-->
 
-<div class="modal fade" id="medication-modal-@Model.Id" tabindex="-1" role="dialog" aria-labelledby="registerUserTitle" aria-hidden="true">
+<div class="modal fade" id="medication-modal-@Model.Id" tabindex="-1" role="dialog" aria-labelledby="registerUserTitle"
+    aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
 
@@ -218,48 +238,55 @@
 
 <!--Finish Medication Modal-->
 
-<!--Start Delete Medication Modal-->
+<!--Start DeleteMedication Modal-->
+
 @foreach (var item in medicList)
 {
-
-    <div class="modal fade" id="deleteMedication-@item.Id" tabindex="-1" role="dialog" aria-labelledby="deleteMedicationTitle" aria-hidden="true">
+    <div class="modal fade" id="deleteMedication-@item.Id" tabindex="-1" role="dialog"
+    aria-labelledby="deleteMedicationTitle" aria-hidden="true">
 
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
 
             <div class="modal-content">
 
-                <form action="">
-                    <div class="modal-header text-center">
+                <div class="modal-header text-center">
 
-                        <h3 class="modal-title text-danger text-center" id="deleteMedicationTitle">Alerta!</h3>
+                    <h3 class="modal-title text-danger text-center" id="deleteMedicationTitle">Alerta!</h3>
 
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                            <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
 
-                        </button>
+                    </button>
 
-                    </div>
+                </div>
 
-                    <div class="modal-body p-3">
-                        <span>Tem certeza que deseja excluir o medicamento <b>@item.MedicationName</b> desta receita?</span>
-                    </div>
+                <div class="modal-body p-0">
 
-                    <div class="modal-footer">
+                    <form method="post" asp-action="DeleteMedication" asp-controller="Medicacao">
 
-                        <button class="btn btn-outline-danger btn-sm" name="decision" type="submit" value="Delete" title="Excluir"><i style="font-size: 20px;" class="bi bi-person-fill-x"></i></button>
-                        <button class="btn btn-outline-secondary btn-sm" name="decision" type="submit" value="Cancel" title="Cancelar"><i style="font-size: 20px;" class="bi bi-arrow-return-left"></i></button>
+                        <input type="hidden" asp-for="@Model.Id">
 
-                    </div>
-                    
-                </form>
+                        <div class="p-2 text-justify">
+                            <span>Tem certeza que deseja excluir a medicação <b>@item.MedicationName</b> desta receita ?</span>
+                        </div>
+
+                        <div class="modal-footer p-2">
+
+                            <button class="btn btn-outline-danger btn-sm" name="decision" type="submit" value="Delete" title="Delete - @item.Id"><i             style="font-size: 20px;" class="bi bi-person-fill-x"></i></button>
+
+                            <button class="btn btn-outline-secondary btn-sm" name="decision" type="submit" value="Cancel"title="Cancel"><i style="font-size: 20px;" class="bi bi-arrow-return-left"></i></button>
+
+                        </div>
+
+                    </form>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
 }
-
-<!--Finish Delete Medication Modal-->
+<!--Finish DeleteMedication Modal-->
