@@ -178,6 +178,62 @@
                                     <td class="border-medic p-1">À cada @item.DoseTime - horas</td>
 
                                 </tr>
+
+                                <!--Start DeleteMedication Modal-->
+
+
+                                <div class="modal fade" id="myModal-@item.Id" tabindex="-1" role="dialog"
+                                    aria-labelledby="deleteMedicationTitle" aria-hidden="true">
+
+                                    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
+                                        <div class="modal-content">
+
+                                            <div class="modal-header text-center">
+
+                                                <h3 class="modal-title text-danger text-center" id="deleteMedicationTitle">
+                                                    Alerta!</h3>
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                                    <span aria-hidden="true">&times;</span>
+
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal-body p-0">
+
+                                                <form name="medication-form-delete" id="medication-form-delete">
+
+                                                    <div class="warning-delete"></div>
+
+                                                    <input type="hidden" asp-for="@Model.Id">
+
+                                                    <div class="p-2 text-justify">
+                                                        <span>Tem certeza que deseja excluir a medicação <b>@item.MedicationName</b> ?</span>
+                                                    </div>
+
+                                                    <div class="modal-footer p-2">
+
+                                                        <button class="btn btn-outline-danger btn-sm" onclick="deleteMedication(@item.Id)" type="submit" title="Delete"><i style="font-size: 20px;"
+                                                        class="bi bi-person-fill-x"></i></button>
+
+                                                        <!--<button class="btn btn-outline-secondary btn-sm" name="decision" type="submit" ><i style="font-size: 20px;" class="bi bi-arrow-return-left"></i></button>-->
+
+                                            </div>
+
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--Finish DeleteMedication Modal-->
                             }
 
                         </tbody>
@@ -237,56 +293,3 @@
 </div>
 
 <!--Finish Medication Modal-->
-
-<!--Start DeleteMedication Modal-->
-
-@foreach (var item in medicList)
-{
-    <div class="modal fade" id="deleteMedication-@item.Id" tabindex="-1" role="dialog"
-    aria-labelledby="deleteMedicationTitle" aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-
-            <div class="modal-content">
-
-                <div class="modal-header text-center">
-
-                    <h3 class="modal-title text-danger text-center" id="deleteMedicationTitle">Alerta!</h3>
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                        <span aria-hidden="true">&times;</span>
-
-                    </button>
-
-                </div>
-
-                <div class="modal-body p-0">
-
-                    <form method="post" asp-action="DeleteMedication" asp-controller="Medicacao">
-
-                        <input type="hidden" asp-for="@Model.Id">
-
-                        <div class="p-2 text-justify">
-                            <span>Tem certeza que deseja excluir a medicação <b>@item.MedicationName</b> desta receita ?</span>
-                        </div>
-
-                        <div class="modal-footer p-2">
-
-                            <button class="btn btn-outline-danger btn-sm" name="decision" type="submit" value="Delete" title="Delete - @item.Id"><i             style="font-size: 20px;" class="bi bi-person-fill-x"></i></button>
-
-                            <button class="btn btn-outline-secondary btn-sm" name="decision" type="submit" value="Cancel"title="Cancel"><i style="font-size: 20px;" class="bi bi-arrow-return-left"></i></button>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-}
-<!--Finish DeleteMedication Modal-->

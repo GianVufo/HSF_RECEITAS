@@ -40,38 +40,31 @@ namespace Hsf_Receitas.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteMedication(int id, string decision, Medicacao medication) 
+        public IActionResult DeleteMedication(int id, int recId)
         {
 
             try
             {
+                HSFContext database = new HSFContext();
+                MedicacaoServices medServ = new MedicacaoServices();
 
-                MedicacaoServices medic = new MedicacaoServices();
-                
-                using HSFContext database = new HSFContext();
+                var item = database.Medicamentos.Find(id);
 
-                switch (decision)
+                if (item != null)
                 {
-                    case "Delete":
-
-                        List<Medicacao> listMedication = database.Medicamentos.Where(m => m.ReceituarioId == id).ToList();
-
-                        id = listMedication.Select(l => l.Id).First();
-
-                        medic.DelMedication(id);
-                        return Redirect("/Receituario/CompletePrescription?id=" + medication.Id);
-
-                    case "Cancel":
-
-                        return Redirect("/Receituario/CompletePrescription?id=" + medication.Id);
+                    database.Medicamentos.Remove(item);
+                    database.SaveChanges();
+                }else {
+                    return Json(new { stats = "INVALID"});
                 }
 
-                return Redirect("/Receituario/CompletePrescription?id=" + medication.Id);
+                return Json(new { stats = "OK"});
+                
             }
             catch (Exception e)
             {
                 _logger.LogError("Erro ao medicamento do Receituário!" + e.Message);
-                return RedirectToAction("Index", "Home");
+                return Json(new { stats = "INVALID", message = "Falha ao excluir medicamento!" });
             }
 
         }

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hsf_Receitas.Migrations
 {
     [DbContext(typeof(HSFContext))]
-    [Migration("20230505203618_Hsf_Receituario")]
-    partial class Hsf_Receituario
+    [Migration("20230510195959_Hsf_Database")]
+    partial class Hsf_Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

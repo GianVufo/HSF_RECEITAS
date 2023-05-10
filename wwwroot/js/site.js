@@ -16,32 +16,27 @@ function inserirRemediosATC() {
 
 }
 
-function ATM()
-{
+function ATM() {
   var pacientName = document.getElementById("atm-up-pacientName").value;
   document.getElementById("atm-pacientName").value = pacientName;
 }
 
-function ATC()
-{
+function ATC() {
   var pacientName = document.getElementById("atc-up-pacientName").value;
   document.getElementById("atc-pacientName").value = pacientName;
 }
 
-function ShowPrescriptionPacient ()
-{
+function ShowPrescriptionPacient() {
   var pacientName = document.getElementById("pacientName").value;
   document.querySelector('#nameP').textContent = pacientName;
 }
 
-function ShowPrescriptionData ()
-{
+function ShowPrescriptionData() {
   var dataAppoiment = new Date(document.getElementById("dataAppoiment").value);
-  document.querySelector('#dataA').textContent = dataAppoiment.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+  document.querySelector('#dataA').textContent = dataAppoiment.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
 }
 
-function ShowPrescriptionMedic ()
-{
+function ShowPrescriptionMedic() {
   var doctorName = document.getElementById("doctorName").value;
   document.querySelector('#nameM').textContent = doctorName;
 }

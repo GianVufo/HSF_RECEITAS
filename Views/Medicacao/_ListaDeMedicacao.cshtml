@@ -32,7 +32,7 @@
 
             @foreach (var item in Model)
             {
-                <tr>
+                <tr id="tr-@item.Id">
 
                     <td class="text-center">@item.MedicationName</td>
 
@@ -45,9 +45,8 @@
                     <td>À cada @item.DoseTime - horas</td>
 
                     <td>
-                        <button class="btn btn-sm btn-outline-danger" type="button" data-toggle="modal"
-                    data-target="#deleteMedication-@item.Id" title="Excluir Medicação desta Receita"><i
-                        class="bi bi-trash3-fill"></i></button>
+                        <button class="btn btn-sm btn-outline-danger" type="button" data-toggle="modal" data-target="#myModal-@item.Id" title="Excluir Medicação desta Receita"><i
+                            class="bi bi-trash3-fill"></i></button>
                     </td>
 
                 </tr>
