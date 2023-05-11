@@ -1,0 +1,221 @@
+.show-atm {
+    width: 800px;
+    margin-bottom: 1.9%;
+    position: relative;
+    box-shadow: 8px 10px 8px rgba(0 0 0 / 80%);
+    background-color: #fff;
+    margin-top: 2%;
+    border: 1px solid #007bff;
+    border-radius: 1%;
+}
+
+.show-body-atm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.atm-title {
+    width: 85%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    margin-top: 2%;
+}
+
+.atm-title h1 {
+    font-size: 3vh;
+    font-weight: bold;
+    margin-top: 1.5%;
+}
+
+.table-medicament-atm {
+    padding: 0%;
+    height: 5em;
+    margin-bottom: 0%;
+}
+
+
+.table-medicament-atm tr>th:nth-child(2) {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.table-medicament-atm tr>th:first-child,
+.table-medicament-atm tr>th:nth-child(3),
+.table-medicament-atm tr>th:nth-child(4),
+.table-medicament-atm tr>th:nth-child(5) {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.table-medicament-atm tr>td:first-child .table-medicament-atm tr>td:nth-child(3),
+.table-medicament-atm tr>td:nth-child(4),
+.table-medicament-atm tr>td:nth-child(5),
+.table-medicament-atm tr>td:nth-child(2) {
+    height: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.p1 {
+    margin-left: 25vh;
+}
+
+.prescription-data-atm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.atm-line {
+    width: 64vh;
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 2%;
+    margin-bottom: 2.5%;
+}
+
+.atm-line-2 {
+    width: 39vh;
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 3.5%;
+    margin-bottom: 2.5%;
+    margin-left: 2px;
+}
+
+.atm-line-3 {
+    width: 30vh;
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 1%;
+    margin-bottom: 2.5%;
+    margin-left: 2px;
+}
+
+.atm-line-4 {
+    width: 26vh;
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 1%;
+    margin-bottom: 2.5%;
+    margin-left: 5px;
+}
+
+.p3 {
+    margin-top: -2%;
+}
+
+.atm-line-5 {
+    width: 41vh;
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 1%;
+    margin-bottom: 2.5%;
+    margin-left: 5px;
+}
+
+.p4 {
+    margin-top: -2%;
+}
+
+.atm-line-6 {
+    width: 49.5vh;
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 0.2%;
+    margin-bottom: 2.5%;
+    margin-left: 5px;
+}
+
+.p5 {
+    margin-top: -3%;
+}
+
+
+@media (max-width: 1920px) and (min-width: 1920px) {
+
+    .p1 {
+        margin-left: 37vh;
+    }
+
+    .prescription-data-atm {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 5vh;
+
+    }
+
+    .atm-line {
+        width: 64.3vh;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 2%;
+        margin-bottom: 2.5%;
+    }
+
+    .atm-line-2 {
+        width: 47vh;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 2%;
+        margin-bottom: 2.5%;
+        margin-left: 2px;
+    }
+
+    .atm-line-3 {
+        width: 33vh;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.2%;
+        margin-bottom: 2.5%;
+        margin-left: 2px;
+    }
+
+    .atm-line-4 {
+        width: 26vh;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.2%;
+        margin-bottom: 2.5%;
+        margin-left: 5px;
+    }
+
+    .p3 {
+        margin-top: -2%;
+    }
+
+    .atm-line-5 {
+        width: 48.5vh;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.2%;
+        margin-bottom: 2.5%;
+        margin-left: 5px;
+    }
+
+    .p4 {
+        margin-top: -2%;
+    }
+
+    .atm-line-6 {
+        width: 54.5vh;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.2%;
+        margin-bottom: 2.5%;
+        margin-left: 5px;
+    }
+
+    .p5 {
+        margin-top: -2%;
+    }
+}

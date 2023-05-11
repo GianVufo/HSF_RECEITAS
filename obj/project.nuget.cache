@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nvcn+WjHpC9Ml48f3sG563vVMY6/m9VoXIyqFzK2s2aWUTigjFlIUZbBHuSr2sIdWNkNyUjueC+Bo3vN4LHWEQ==",
+  "dgSpecHash": "4UmZJ0PA6RIE4y5z7/wpUk/eu1/B4ZajwT5zS3DlhzzWCVeG8yBYpWQihSS0lmSUHMK0RoLFWoAPno1wBAPdZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gianluca.vialli\\Desktop\\Projeto Receituario\\Hsf_Receitas\\Hsf_Receitas.csproj",
+  "projectFilePath": "C:\\Users\\gianluca.vialli\\Desktop\\Hsf_Receitas\\Hsf_Receitas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gianluca.vialli\\.nuget\\packages\\fastreport.compat\\2023.1.8\\fastreport.compat.2023.1.8.nupkg.sha512",
     "C:\\Users\\gianluca.vialli\\.nuget\\packages\\fastreport.opensource\\2023.2.9\\fastreport.opensource.2023.2.9.nupkg.sha512",

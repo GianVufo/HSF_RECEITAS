@@ -15,7 +15,7 @@ function AddMedications() {
     .done(function (output) {
       if (output.stats == "OK") {
 
-        alert("Medicação: " + properties.MedicationName + " cadastrada com sucesso!")
+        alert("Medicação: " + properties.MedicationName + "-" + properties.MedicationDosage + " cadastrada com sucesso!")
         $(location).attr('href', '/Receituario/CompletePrescription?id=' + parseInt(properties.ReceituarioId));
 
       } else if (output.stats == "INVALID") {

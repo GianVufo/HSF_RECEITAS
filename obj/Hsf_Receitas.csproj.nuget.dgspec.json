@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gianluca.vialli\\Desktop\\Projeto Receituario\\Hsf_Receitas\\Hsf_Receitas.csproj": {}
+    "C:\\Users\\gianluca.vialli\\Desktop\\Hsf_Receitas\\Hsf_Receitas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gianluca.vialli\\Desktop\\Projeto Receituario\\Hsf_Receitas\\Hsf_Receitas.csproj": {
+    "C:\\Users\\gianluca.vialli\\Desktop\\Hsf_Receitas\\Hsf_Receitas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gianluca.vialli\\Desktop\\Projeto Receituario\\Hsf_Receitas\\Hsf_Receitas.csproj",
+        "projectUniqueName": "C:\\Users\\gianluca.vialli\\Desktop\\Hsf_Receitas\\Hsf_Receitas.csproj",
         "projectName": "Hsf_Receitas",
-        "projectPath": "C:\\Users\\gianluca.vialli\\Desktop\\Projeto Receituario\\Hsf_Receitas\\Hsf_Receitas.csproj",
+        "projectPath": "C:\\Users\\gianluca.vialli\\Desktop\\Hsf_Receitas\\Hsf_Receitas.csproj",
         "packagesPath": "C:\\Users\\gianluca.vialli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gianluca.vialli\\Desktop\\Projeto Receituario\\Hsf_Receitas\\obj\\",
+        "outputPath": "C:\\Users\\gianluca.vialli\\Desktop\\Hsf_Receitas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gianluca.vialli\\AppData\\Roaming\\NuGet\\NuGet.Config"

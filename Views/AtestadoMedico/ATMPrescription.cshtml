@@ -5,9 +5,9 @@
     ViewData["title"] = "Gerar Receituário + Atestado Médico";
 }
 
-<div class="prescription">
+<div class="prescription container-fluid">
 
-    <div class="card">
+    <div class="card card-prescription mb-4 col-md-5 p-0">
 
         <div class="card-header text-light">
 
@@ -27,22 +27,19 @@
 
                         <h5 class="card-header">Informações básicas :</h5>
 
-                        <div class="card-body">
+                        <div class="card-body card-body-edit-prescription">
 
                             <input id="atm-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id"
                                 disabled>
 
                             <label class="text-primary" for="">Nome do Paciente: </label>
-                            <input type="text" id="atm-pacientName" class="form-control border-primary mb-3"
-                                asp-for="PacientName" required=>
-
-                            <label class="text-primary" for="">Nome do Médico: </label>
-                            <input type="text" id="atm-doctorName" class="form-control border-primary mb-3"
-                                asp-for="DoctorName" required>
+                            <input type="text" id="atm-pacientName" class="form-control border-primary mb-3" asp-for="PacientName" onkeyup="ATMShowPrescriptionPacient()" required=>
 
                             <label class="text-primary" for="">Data da consulta: </label>
-                            <input type="date" id="atm-dataAppoiment" class="form-control border-primary mb-3"
-                                asp-for="DateOfMedicalAppoiment" required>
+                            <input type="date" id="atm-dataAppoiment" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" onblur="ATMShowPrescriptionData()" required>
+
+                            <label class="text-primary" for="">Nome do Médico: </label>
+                            <input type="text" id="atm-doctorName" class="form-control border-primary mb-3" asp-for="DoctorName" onkeyup="ATMShowPrescriptionMedic()"required>
 
                         </div>
 
@@ -82,12 +79,56 @@
 
                     </div>
 
-                    <button type="submit" title="Gerar Receita" class="btn btn-md btn-secondary btn-printer"> <span
+                    <button type="submit" title="Gerar Receita" class="btn btn-md btn-secondary btn-printer mt-3"> <span
                             class="material-symbols-outlined"> save </span> Salvar </button>
 
                 </form>
 
             </div>
+        </div>
+
+    </div>
+
+    <div class="show-prescription col-md-5">
+
+        <div class="header-show-prescription mt-3">
+
+            <div class="header-img">
+
+                <img src="../images/logotipo-hospital-sao-francisco.png" alt="logotipo da vizualização do receituário comum">
+
+            </div>
+
+            <div class="show-logo">
+
+                <h1>RECEITUÁRIO</h1>
+                <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+                <h2>HOSPITAL SÃO FRANCISCO</h2>
+
+            </div>
+
+        </div>
+
+        <div class="show-body">
+
+            <div class="prescription-data mt-3">
+
+                <div class="inputs"><p class="m-0 p-0">NOME DO PACIENTE :</p><span class="content" id="atm-nameP"></span></div>
+                <div class="inputs"><p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span class="content" id="atm-dataA"></span></div>
+                <div class="inputs"><p class="m-0 p-0">NOME DO MÉDICO :</p><span class="content" id="atm-nameM"></span></div>
+
+            </div>
+
+            <div class="medicacoes">
+                <h3 class="text-center text-primary font-weight-bold mt-3">MEDICAMENTOS :</h3>
+            </div>
+
+        </div>
+
+        <div class="show-footer">
+            <P>BR 040 - KM 438 - BEASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-12-56</P>
+            <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+            <div class="line"></div>
         </div>
 
     </div>

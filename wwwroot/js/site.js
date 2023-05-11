@@ -26,6 +26,8 @@ function ATC() {
   document.getElementById("atc-pacientName").value = pacientName;
 }
 
+/* Mostrar dados do paciente em Receituário */
+
 function ShowPrescriptionPacient() {
   var pacientName = document.getElementById("pacientName").value;
   document.querySelector('#nameP').textContent = pacientName;
@@ -39,4 +41,21 @@ function ShowPrescriptionData() {
 function ShowPrescriptionMedic() {
   var doctorName = document.getElementById("doctorName").value;
   document.querySelector('#nameM').textContent = doctorName;
+}
+
+/* Mostrar dados do paciente em tempo real em atestado médico */
+
+function ATMShowPrescriptionPacient() {
+  var pacientName = document.getElementById("atm-pacientName").value;
+  document.querySelector('#atm-nameP').textContent = pacientName;
+}
+
+function ATMShowPrescriptionData() {
+  var dataAppoiment = new Date(document.getElementById("atm-dataAppoiment").value);
+  document.querySelector('#atm-dataA').textContent = dataAppoiment.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+}
+
+function ATMShowPrescriptionMedic() {
+  var doctorName = document.getElementById("atm-doctorName").value;
+  document.querySelector('#atm-nameM').textContent = doctorName;
 }
