@@ -7,7 +7,7 @@ function AddATCPrescription() {
     DateOfMedicalAppoiment: $("#atc-dataAppoiment").val(),
   };
 
-  $.post("/AtestadoComparecimento/ATCPrescription", properties)
+  $.post("/Receituario/Prescription", properties)
 
     .done(function (output) {
       if (output.id != null) {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Maio-2023 às 19:42
+-- Tempo de geração: 11-Maio-2023 às 22:33
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 7.4.30
 
@@ -94,7 +94,7 @@ CREATE TABLE `__efmigrationshistory` (
 --
 
 INSERT INTO `__efmigrationshistory` (`MigrationId`, `ProductVersion`) VALUES
-('20230502174115_HSF_Database', '3.0.0');
+('20230511203026_Hsf_Database', '3.0.0');
 
 --
 -- Índices para tabelas despejadas
