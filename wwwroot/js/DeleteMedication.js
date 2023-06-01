@@ -1,7 +1,3 @@
-function abreModal() {
-  $('#myModal').modal('show');
-}
-
 function deleteMedication(idItem) {
   var url = "/Medicacao/DeleteMedication";
   $.ajax({
@@ -10,12 +6,14 @@ function deleteMedication(idItem) {
     datatype: "json",
     type: "POST",
     success: function () {
-      if (idItem != null) {
+      if (idItem != 0) {
 
         alert("Medicação excluída com sucesso!");
-        location.reload();
 
       }
+
+      location.reload();
+      
     }
   })
 }

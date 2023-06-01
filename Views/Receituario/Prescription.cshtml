@@ -40,6 +40,10 @@
                             <label class="text-primary" for="">Nome do Médico: </label>
                             <input type="text" id="doctorName" class="form-control border-primary" asp-for="DoctorName" onkeyup="ShowPrescriptionMedic()" required>
 
+                            <div class="edit-button col-md-3">
+                                <button type="submit" class="btn btn-sm btn-primary btn-printer mt-3"> <span class="material-symbols-outlined"> save </span> Salvar</button>
+                            </div>
+
                         </div>
 
                     </div>
@@ -52,14 +56,13 @@
 
                             <p class="text-danger">Salve a receita para inserir medicamentos.</p>
 
-                            <button target type="button" title="Salve a receita para adicionar medicamentos." class="btn btn-md btn-info btn-printer medic-btn" disabled>
+                            <button target type="button" title="Salve a receita para adicionar medicamentos." class="btn btn-sm btn-info btn-printer medic-btn" disabled>
                             <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos </button>
 
                         </div>
 
                     </div>
 
-                    <button type="submit" title="Gerar Receita" onclick="ShowPrescriptionInEditPrescription ()" class="btn btn-md btn-primary btn-printer mt-3"> <span class="material-symbols-outlined"> save </span> Salvar </button>
 
                 </form>
 

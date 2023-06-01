@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Hsf_Receitas.Data;
 using Hsf_Receitas.Models;
 using Hsf_Receitas.Services;
@@ -40,7 +38,7 @@ namespace Hsf_Receitas.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteMedication(int id, int recId)
+        public IActionResult DeleteMedication(int id)
         {
 
             try
