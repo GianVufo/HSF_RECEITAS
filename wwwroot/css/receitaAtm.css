@@ -62,39 +62,37 @@
 }
 
 .p1 {
-    margin-left: 25vh;
+    margin-left: 35vh;
 }
 
 .prescription-data-atm {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: center;
     margin-top: 2vh;
 }
 
-.atm-line {
-    width: 64vh;
-    height: 2px;
-    background-color: #007bff;
-    margin-top: 2%;
-    margin-bottom: 2.5%;
+.p2 {
+    margin-left: 2vh;
 }
 
-.atm-line-2 {
-    width: 39vh;
-    height: 2px;
-    background-color: #007bff;
-    margin-top: 3.5%;
-    margin-bottom: 2.5%;
-    margin-left: 2px;
+.atm-MedicUnity {
+    margin-bottom: 7%;
+    border-bottom: 2px solid #007bff;
+    width: 46.5vh; 
+    text-align: center;
+    margin-left: 1%;
+    margin-top: -1.5%;
+}
+
+.p3 {
+    margin-top: -4%;
+    margin-left: 2vh;
 }
 
 .atm-line-3 {
-    width: 30vh;
+    width: 38vh;
     height: 2px;
     background-color: #007bff;
-    margin-top: 1%;
+    margin-top: -1%;
     margin-bottom: 2.5%;
     margin-left: 2px;
 }
@@ -103,17 +101,22 @@
     width: 26vh;
     height: 2px;
     background-color: #007bff;
-    margin-top: 1%;
+    margin-top: -1%;
     margin-bottom: 2.5%;
     margin-left: 5px;
 }
 
-.p3 {
-    margin-top: -2%;
+.atm-RestDays {
+    margin-bottom: 3vh;
+    border-bottom: 2px solid #007bff;
+    width: 15vh; 
+    text-align: center;
+    margin-top: -2.5vh;
+    margin-left: 1vh;
 }
 
 .atm-line-5 {
-    width: 41vh;
+    width: 17vh;
     height: 2px;
     background-color: #007bff;
     margin-top: 1%;
@@ -123,19 +126,33 @@
 
 .p4 {
     margin-top: -2%;
+    margin-left: 2vh;
 }
 
 .atm-line-6 {
-    width: 49.5vh;
+    width: 18vh;
     height: 2px;
     background-color: #007bff;
-    margin-top: 0.2%;
+    margin-top: 1%;
     margin-bottom: 2.5%;
     margin-left: 5px;
 }
 
 .p5 {
-    margin-top: -3%;
+    margin-top: -2%;
+    margin-left: 2vh;
+}
+
+.atm-pacient {
+    margin-top: -2%;
+    margin-bottom: 2%;
+    border-bottom: 2px solid #007bff;
+    width: 100%; 
+    text-align: left;
+}
+
+.atm-MedicUnity span {
+    margin-bottom: 0%;
 }
 
 
@@ -154,30 +171,17 @@
 
     }
 
-    .atm-line {
-        width: 64.3vh;
-        height: 2px;
-        background-color: #007bff;
-        margin-top: 2%;
-        margin-bottom: 2.5%;
+    .p2 {
+        margin-left: 1vh;
     }
-
-    .atm-line-2 {
-        width: 47vh;
-        height: 2px;
-        background-color: #007bff;
-        margin-top: 2%;
-        margin-bottom: 2.5%;
-        margin-left: 2px;
-    }
-
-    .atm-line-3 {
-        width: 33vh;
-        height: 2px;
-        background-color: #007bff;
-        margin-top: 0.2%;
-        margin-bottom: 2.5%;
-        margin-left: 2px;
+    
+    .atm-MedicUnity {
+        margin-bottom: 5%;
+        border-bottom: 2px solid #007bff;
+        width: 44.5vh; 
+        text-align: center;
+        margin-left: 1%;
+        margin-top: -1%;
     }
 
     .atm-line-4 {
@@ -218,4 +222,5 @@
     .p5 {
         margin-top: -2%;
     }
+
 }

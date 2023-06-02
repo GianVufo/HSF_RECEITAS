@@ -15,6 +15,9 @@
     List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id ==
     Model.Id).ToList();
 
+    List<AtestadoMedico> atmList = database.AtestadosMedico.Where(m => m.ReceituarioId ==
+    Model.Id).ToList();
+
     int medicIdPrint = @Model.Id;
 }
 
@@ -62,31 +65,11 @@
                                 <p class="text-danger">Salve as alterações antes de imprimir.</p>
 
                                 <div class="edit-button col-md-3">
-                                    <button type="submit" class="btn btn-md btn-primary mt-3">Salvar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary btn-printer mt-3"> <span
+                                            class="material-symbols-outlined"> save </span> Salvar</button>
                                 </div>
 
                             </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="card medicine-card">
-
-                        <h5 class="card-header">Atestado Médico :</h5>
-
-                        <div class="card-body">
-
-                            <p class="text-info ml-3">Agora você pode adicionar um atestado médico!</p>
-
-                            <!--<div class="col-md-12 mt-3">
-                                await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", medicList)
-                            </div>-->
-
-                            <button type="button" data-toggle="modal" data-target="#atm-modal-@Model.Id"
-                                title="Adicionar Atestado Médico" onclick=" ATM()"
-                                class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined">
-                                    clinical_notes </span> Atestado Médico</button>
 
                         </div>
 
@@ -104,18 +87,52 @@
                                 @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
                             </div>
 
-                            <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id"
-                                title="Inserir medicamentos à receita" onclick=" inserirRemediosATM()"
-                                class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined">
-                                    syringe </span> Adicionar Medicamentos</button>
+                            <div class="row button-prescription">
+
+                                <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id"
+                                    title="Inserir medicamentos à receita" onclick=" inserirRemediosATM()"
+                                    class="btn btn-sm btn-info btn-printer"> <span
+                                        class="material-symbols-outlined">
+                                        syringe </span> Adicionar Medicamentos</button>
+
+                                <a href="/AtestadoMedico/ATMPrescriptionPrintToPDF?id=@Model.Id" target="_blank"
+                                    title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"
+                                    href=""><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                    <a href="/AtestadoMedico/ATMPrescriptionPrintToPDF?id=@Model.Id" target="_blank"
-                        title="Imprimir receituário" class="btn btn-md btn-secondary btn-printer-edit mt-3"
-                        href=""><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                    <div class="card medicine-card">
+
+                        <h5 class="card-header">Atestado Médico :</h5>
+
+                        <div class="card-body">
+
+                            
+
+                            @if(atmList.Count() <= 0)
+                            {
+                                <p class="text-info ml-3">Agora você pode adicionar um atestado médico!</p>
+
+                                <button type="button" data-toggle="modal" data-target="#atm-modal-@Model.Id" title="Adicionar Atestado Médico" onclick=" ATM()" class="btn btn-sm btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> clinical_notes </span> Atestado Médico</button>
+
+                                <p class="text-danger ml-3 mt-3" role="alert"> Nenhum atestado médico cadastrado ! </p>
+
+                            }else {
+                                @foreach (var item in atmList)
+                                {
+                                    <button target type="button" title="Atestado médico já cadastrado" class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled> <span class="material-symbols-outlined"> clinical_notes </span> Atestado Médico </button>
+
+                                    <p class="text-info ml-3 mt-3" > Atestado médico cadastrado para: <span class="text-info font-weight-bold mt-3">@item.PacientName</span> </p>                                   
+                                }
+                            }
+
+                        </div>
+
+                    </div>
 
                 </form>
 
@@ -206,7 +223,7 @@
                                 </tr>
 
                                 <div class="modal fade" id="myModal-@item.Id" tabindex="-1" role="dialog"
-                                    aria-labelledby="deleteMedicationTitle" aria-hidden="true">
+                            aria-labelledby="deleteMedicationTitle" aria-hidden="true">
 
                                     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
 
@@ -266,7 +283,7 @@
             </div>
 
             <div class="show-footer">
-                <P>BR 040 - KM 438 - BEASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-12-56</P>
+                <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
                 <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
                 <div class="line"></div>
             </div>
@@ -281,7 +298,7 @@
         </div>
     }
     <!-- Vizualização do Atestado médico -->
-    @if (prescriptionList.Count() > 0)
+    @if (atmList.Count() > 0)
     {
         <div class="show-atm col-md-5">
 
@@ -311,41 +328,63 @@
 
                 <div class="prescription-data-atm">
 
-                    <article class="mt-5 text-primary atm-article">
-                        <p class="p1">Atesto para os devido fins que o(a) Sr.(a)</p>
-                        <div class="atm-line"></div>
+                    @foreach (var item in atmList)
+                    {
+                        <article class="mt-5 text-primary atm-article">
 
-                        <div class="row">
-                            <p class="">foi atendido(a) na unidade de</p>
-                            <div class="atm-line-2"></div>
+                        <p class="p1">Atesto para os devido fins que o(a) Sr.(a)</p>
+
+                        <div class="atm-pacient">
+                            <span class="text-center ml-2">@item.PacientName</span>
                         </div>
 
-                        <div class="row mt-0">
+                        <div class="row">
+
+                            <p class="p2">foi atendido(a) na unidade de</p>
+
+                            <div class="atm-MedicUnity">
+                                
+                                <span class="">@item.MedicUnity</span>
+                        
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
                             <p class="p3">do</p>
+
                             <div class="atm-line-3"></div>
+
                             <p class="p3 ml-2">no dia</p>
+
                             <div class="atm-line-4"></div>
+
                         </div>
 
                         <div class="row">
                             <p class="p4">às</p>
                             <div class="atm-line-5"></div>
                             <p class="p4 ml-2">horas. Necessitando de</p>
-                        </div>
 
-                        <div class="row">
-                            <div class="atm-line-6"></div>
+                            <div class="atm-RestDays">
+                                
+                                <span class="">@item.RestDays</span>
+                        
+                            </div>
+
                             <p class="p5 ml-2">dias de repouso.</p>
                         </div>
 
-                    </article>   
+                    </article>
+                    }
 
                 </div>
 
             </div>
 
             <div class="show-footer">
-                <P>BR 040 - KM 438 - BEASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-12-56</P>
+                <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
                 <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
                 <div class="line"></div>
             </div>
@@ -355,8 +394,8 @@
     }
     else
     {
-        <div class="alert alert-warning w-100 text-center alert-medication" role="alert">
-            Não existe uma receita para mostrar !
+        <div class="alert alert-warning w-50 text-center alert-medication" role="alert">
+            Não existe um atestado médico para ser mostrado !
         </div>
     }
 
