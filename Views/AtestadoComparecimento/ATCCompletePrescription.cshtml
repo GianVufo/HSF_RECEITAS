@@ -9,15 +9,21 @@
     AtestadoComparecimento atc = new AtestadoComparecimento();
     HSFContext database = new HSFContext();
 
+    List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id ==
+    Model.Id).ToList();
+
     List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId ==
+    Model.Id).ToList();
+
+    List<AtestadoComparecimento> atcList = database.AtestadosComparecimento.Where(m => m.ReceituarioId ==
     Model.Id).ToList();
 
     int medicIdPrint = @Model.Id;
 }
 
-<div class="prescription">
+<div class="prescription container-fluid">
 
-    <div class="card">
+    <div class="card card-prescription mb-4 p-0 col-md-5">
 
         <div class="card-header text-light">
 
@@ -37,46 +43,33 @@
 
                         <h5 class="card-header">Informações básicas :</h5>
 
-                        <div class="row">
-
-                            <p class=" ml-5 mt-4 text-danger text-center">Ao realizar alterações nas informções básicas, salve-as antes de imprimir.</p>
+                        <div class="row medicine-card-2">
 
                             <div class="card-body card-body-edit-prescription col-md-8">
 
-                                <input id="atc-up-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
+                                <input id="atc-up-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id"
+                                    disabled>
 
                                 <label class="text-primary" for="">Nome do Paciente: </label>
-                                <input type="text" id="atc-up-pacientName" class="form-control border-primary mb-3" asp-for="PacientName" required>
-
-                                <label class="text-primary" for="">Nome do Médico: </label>
-                                <input type="text" id="atc-up-doctorName" class="form-control border-primary mb-3" asp-for="DoctorName" required>
+                                <input type="text" id="atc-up-pacientName" class="form-control border-primary mb-3"
+                                    asp-for="PacientName" required>
 
                                 <label class="text-primary" for="">Data da consulta: </label>
-                                <input type="date" id="atc-up-dataAppoiment" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" required>
+                                <input type="date" id="atc-up-dataAppoiment" class="form-control border-primary mb-3"
+                                    asp-for="DateOfMedicalAppoiment" required>
+
+                                <label class="text-primary" for="">Nome do Médico: </label>
+                                <input type="text" id="atc-up-doctorName" class="form-control border-primary mb-3"
+                                    asp-for="DoctorName" required>
+
+                                <p class="text-danger">Salve as alterações antes de imprimir.</p>
+
+                                <div class="edit-button col-md-3">
+                                    <button type="submit" class="btn btn-sm btn-primary btn-printer mt-3"> <span
+                                            class="material-symbols-outlined"> save </span> Salvar</button>
+                                </div>
 
                             </div>
-
-                            <div class="col-md-3 edit-button">
-                                <button type="submit" class=" btn btn-md btn-primary">Salvar</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="card medicine-card">
-
-                        <h5 class="card-header">Atestado Médico :</h5>
-
-                        <div class="card-body">
-
-                            <p class="text-info ml-3">Agora você pode adicionar um atestado de comparecimento!</p>
-
-                            <!--<div class="col-md-12 mt-3">
-                                await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", medicList)
-                            </div>-->
-                            
-                            <button type="button" data-toggle="modal" data-target="#atc-modal-@Model.Id" title="Adicionar Atestado Médico" onclick=" ATC()" class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> clinical_notes </span> Atestado de Comparecimento</button>
 
                         </div>
 
@@ -94,13 +87,64 @@
                                 @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
                             </div>
 
-                            <button type="button" data-toggle="modal" data-target="#atc-medication-modal-@Model.Id" title="Inserir medicamentos à receita" onclick=" inserirRemediosATC()" class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos</button>
+                            <div class="row button-prescription">
+
+                                <button type="button" data-toggle="modal" data-target="#atc-medication-modal-@Model.Id"
+                                    title="Inserir medicamentos à receita" onclick=" inserirRemediosATC()"
+                                    class="btn btn-sm btn-info btn-printer"> <span class="material-symbols-outlined">
+                                        syringe </span> Adicionar Medicamentos</button>
+
+                                @if (medicList.Count() <= 0)
+                                {
+                                    <button title="Insira medicamentos para imprimir!"
+                                    class="btn btn-sm btn-secondary btn-printer-edit medic-btn" disabled><span
+                                        class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
+                                }
+                                else if (atcList.Count() <= 0)
+                                {
+                                    <button title="Gere um atestado de comparecimento para imprimir!"
+                                    class="btn btn-sm btn-secondary btn-printer-edit medic-btn" disabled><span
+                                        class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
+                                }
+                                else
+                                {
+                                    <a href="/AtestadoComparecimento/ATCPrescriptionPrintToPDF?id=@Model.Id" target="_blank"
+                                    title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"><span
+                                        class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                                }
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                    <a href="/AtestadoComparecimento/ATCPrescriptionPrintToPDF?id=@Model.Id" target="_blank" title="Imprimir receituário" class="btn btn-md btn-secondary btn-printer-p" href=""><span class="material-symbols-outlined"> print </span> Imprimir </a>
+                    <div class="card medicine-card">
+
+                        <h5 class="card-header">Atestado de Comparecimento :</h5>
+
+                        <div class="card-body">
+
+                            @if(atcList.Count() <= 0)
+                            {
+                                <p class="text-info ml-3">Agora você pode adicionar um atestado de comparecimento!</p>
+
+                                <button type="button" data-toggle="modal" data-target="#atc-modal-@Model.Id" title="Adicionar atestado de comparecimento" onclick=" ATC()" class="btn btn-sm btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> clinical_notes </span> Atestado de comparecimento</button>
+
+                                <p class="text-danger ml-3 mt-3 mb-0" role="alert"> Nenhum atestado de comparecimento cadastrado ! </p>
+
+                            }else {
+                                @foreach (var item in atcList)
+                                {
+                                    <button target type="button" title="Atestado de comparecimento já cadastrado" class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled> <span class="material-symbols-outlined"> clinical_notes </span> Atestado de comparecimento</button>
+
+                                    <p class="text-info ml-3 mt-3 mb-0" > Atestado de comparecimento cadastrado para: <span class="text-info font-weight-bold mt-3">@item.PacientName</span> </p>                                   
+                                }
+                            }
+
+                        </div>
+
+                    </div>
 
                 </form>
 
@@ -109,11 +153,221 @@
 
     </div>
 
+    @if (prescriptionList.Count() > 0)
+    {
+        <div class=" show-prescription col-md-5">
+
+            <div class="header-show-prescription mt-3">
+
+                <div class="header-img">
+
+                    <img src="../images/logotipo-hospital-sao-francisco.png"
+                    alt="logotipo da vizualização do receituário comum">
+
+                </div>
+
+                <div class="show-logo">
+
+                    <h1>RECEITUÁRIO</h1>
+                    <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+                    <h2>HOSPITAL SÃO FRANCISCO</h2>
+
+                </div>
+
+            </div>
+
+            <div class="show-body">
+
+                @foreach (var item in prescriptionList)
+                {
+                    <div class="prescription-data mt-3">
+
+                        <div class="inputs">
+                            <p class="m-0 p-0">NOME DO PACIENTE :</p><span class="content">@item.PacientName</span>
+                        </div>
+                        <div class="inputs">
+                            <p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span
+                        class="content">@item.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="inputs">
+                            <p class="m-0 p-0">NOME DO MÉDICO :</p><span class="content">@item.DoctorName</span>
+                        </div>
+
+                    </div>
+                }
+
+                <div class="medicacoes">
+
+                    <h3 class="text-center text-primary font-weight-bold mt-3 mb-5">MEDICAMENTOS :</h3>
+
+                    <table class="text-primary table-medicament-atm" id="medic-list">
+
+                        <thead class="text-primart text-center font-weight-bold border-medic">
+
+                            <tr>
+
+                                <th class="border-medic p-1">NOME</th>
+                                <th class="border-medic p-1">DOSAGEM</th>
+                                <th class="border-medic p-1">USO</th>
+                                <th class="border-medic p-1">TEMPO-(Dias)</th>
+                                <th class="border-medic p-1">A CADA-(Hrs)</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody class="text-center">
+
+                            @foreach (var item in medicList)
+                            {
+                                <tr class="border-medic">
+
+                                    <td class="text-center border-medic p-1">@item.MedicationName</td>
+
+                                    <td class="border-medic p-1">@item.MedicationDosage</td>
+
+                                    <td class="border-medic p-1">@item.MedicationMethodUse</td>
+
+                                    <td class="border-medic p-1">@item.UseTime - dias</td>
+
+                                    <td class="border-medic p-1">À cada @item.DoseTime - horas</td>
+
+                                </tr>
+
+                                <div class="modal fade" id="myModal-@item.Id" tabindex="-1" role="dialog"
+                                    aria-labelledby="deleteMedicationTitle" aria-hidden="true">
+
+                                    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
+                                        <div class="modal-content">
+
+                                            <div class="modal-header text-center">
+
+                                                <h3 class="modal-title text-danger text-center" id="deleteMedicationTitle">
+                                                    Alerta!</h3>
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                                    <span aria-hidden="true">&times;</span>
+
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal-body p-0">
+
+                                                <form name="medication-form-delete" id="medication-form-delete">
+
+                                                    <div class="warning-delete"></div>
+
+                                                    <input type="hidden" asp-for="@Model.Id">
+
+                                                    <div class="p-2 text-justify">
+                                                        <span>Tem certeza que deseja excluir a medicação
+                                                            <b>@item.MedicationName</b> ?</span>
+                                                    </div>
+
+                                                    <div class="modal-footer p-2">
+
+                                                        <button class="btn btn-outline-danger btn-sm"
+                                                    onclick="deleteMedication(@item.Id)" type="submit" title="Delete"><i
+                                                        style="font-size: 20px;"
+                                                        class="bi bi-person-fill-x"></i></button>
+
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="show-footer">
+                <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+                <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+                <div class="line"></div>
+            </div>
+
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-warning w-100 text-center alert-medication" role="alert">
+            Não existe uma receita para mostrar !
+        </div>
+    }
+    <!-- Vizualização do Atestado de Comparecimento -->
+    @if (atcList.Count() > 0)
+    {
+        <div class="show-atm col-md-5">
+
+            <div class="header-show-prescription mt-4 mb-3">
+
+                <div class="header-img">
+
+                    <img src="../images/logotipo-hospital-sao-francisco.png"
+                    alt="logotipo da vizualização do receituário comum">
+
+                </div>
+
+                <div class="show-logo mt-2">
+
+                    <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+                    <h2>HOSPITAL SÃO FRANCISCO</h2>
+
+                </div>
+
+            </div>
+
+            <div class="show-body-atm">
+
+                <div class="atm-title">
+                    <h1 class="text-center">ATESTADO DE COMPARECIMENTO</h1>
+                </div>
+
+                <div class="prescription-data-atm">
+
+
+
+                </div>
+
+            </div>
+
+            <div class="show-footer">
+                <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+                <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+                <div class="line"></div>
+            </div>
+
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-warning w-50 text-center alert-medication" role="alert">
+            Ainda não existe um atestado de comparecimento para ser exibido !
+        </div>
+    }
+
 </div>
 
 <!--Start Medication Modal-->
 
-<div class="modal fade" id="atc-medication-modal-@Model.Id" tabindex="-1" role="dialog" aria-labelledby="registerUserTitle" aria-hidden="true">
+<div class="modal fade" id="atc-medication-modal-@Model.Id" tabindex="-1" role="dialog"
+    aria-labelledby="registerUserTitle" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
 
@@ -145,7 +399,8 @@
 
 <!--Start ATC Modal-->
 
-<div class="modal fade" id="atc-modal-@Model.Id" tabindex="-1" role="dialog" aria-labelledby="registerUserTitle" aria-hidden="true">
+<div class="modal fade" id="atc-modal-@Model.Id" tabindex="-1" role="dialog" aria-labelledby="registerUserTitle"
+    aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
 
@@ -153,7 +408,7 @@
 
             <div class="modal-header text-center">
 
-                 <h3 class="text-center mb-0">Atestado de Comparecimento</h3>
+                <h3 class="text-center mb-0">Atestado de Comparecimento</h3>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 

@@ -56,13 +56,13 @@
                                 <input type="text" id="atm-up-pacientName" class="form-control border-primary mb-3"
                                     asp-for="PacientName" required>
 
-                                <label class="text-primary" for="">Nome do Médico: </label>
-                                <input type="text" id="atm-up-doctorName" class="form-control border-primary mb-3"
-                                    asp-for="DoctorName" required>
-
                                 <label class="text-primary" for="">Data da consulta: </label>
                                 <input type="date" id="atm-up-dataAppoiment" class="form-control border-primary mb-3"
                                     asp-for="DateOfMedicalAppoiment" required>
+
+                                <label class="text-primary" for="">Nome do Médico: </label>
+                                <input type="text" id="atm-up-doctorName" class="form-control border-primary mb-3"
+                                    asp-for="DoctorName" required>
 
                                 <p class="text-danger">Salve as alterações antes de imprimir.</p>
 
@@ -97,10 +97,12 @@
                                         class="material-symbols-outlined">
                                         syringe </span> Adicionar Medicamentos</button>
 
-                                @if(medicList.Count() <= 0 || atmList.Count <=0)
+                                @if(medicList.Count() <= 0)
                                 {
                                     <button title="Insira medicamentos para imprimir!" class="btn btn-sm btn-secondary btn-printer-edit medic-btn" disabled><span class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
-                                }else {
+                                }else if (atmList.Count() <= 0) {
+                                    <button title="Gere um atestado médico para imprimir!" class="btn btn-sm btn-secondary btn-printer-edit medic-btn" disabled><span class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
+                                } else {
                                     <a href="/AtestadoMedico/ATMPrescriptionPrintToPDF?id=@Model.Id" target="_blank" title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
                                 }
 
@@ -116,22 +118,20 @@
 
                         <div class="card-body">
 
-                            
-
                             @if(atmList.Count() <= 0)
                             {
                                 <p class="text-info ml-3">Agora você pode adicionar um atestado médico!</p>
 
                                 <button type="button" data-toggle="modal" data-target="#atm-modal-@Model.Id" title="Adicionar Atestado Médico" onclick=" ATM()" class="btn btn-sm btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> clinical_notes </span> Atestado Médico</button>
 
-                                <p class="text-danger ml-3 mt-3" role="alert"> Nenhum atestado médico cadastrado ! </p>
+                                <p class="text-danger ml-3 mt-3 mb-0" role="alert"> Nenhum atestado médico cadastrado ! </p>
 
                             }else {
                                 @foreach (var item in atmList)
                                 {
                                     <button target type="button" title="Atestado médico já cadastrado" class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled> <span class="material-symbols-outlined"> clinical_notes </span> Atestado Médico </button>
 
-                                    <p class="text-info ml-3 mt-3" > Atestado médico cadastrado para: <span class="text-info font-weight-bold mt-3">@item.PacientName</span> </p>                                   
+                                    <p class="text-info ml-3 mt-3 mb-0" > Atestado médico cadastrado para: <span class="text-info font-weight-bold mt-3">@item.PacientName</span> </p>                                   
                                 }
                             }
 
@@ -372,8 +372,15 @@
                         </div>
 
                         <div class="row">
+
                             <p class="p4">às</p>
-                            <div class="atm-line-5"></div>
+
+                            <div class="atm-Time">
+
+                                <span class="">15:00</span>
+                                
+                            </div>
+
                             <p class="p4 ml-2">horas. Necessitando de</p>
 
                             <div class="atm-RestDays">
@@ -383,6 +390,7 @@
                             </div>
 
                             <p class="p5 ml-2">dias de repouso.</p>
+
                         </div>
 
                     </article>
@@ -404,7 +412,7 @@
     else
     {
         <div class="alert alert-warning w-50 text-center alert-medication" role="alert">
-            Não existe um atestado médico para ser mostrado !
+            Ainda não existe um atestado médico para ser exibido !
         </div>
     }
 

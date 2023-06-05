@@ -111,3 +111,4 @@ System.InvalidOperationException: An exception was thrown while attempting to ev
    at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-05T14:24:29.1847231-03:00 0HMR5T69RA77O:00000001 [ERR] Erro ao adicionar receita!An error occurred while updating the entries. See the inner exception for details. (27d96446)

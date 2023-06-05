@@ -2,7 +2,7 @@ function AddATCPrescription() {
 
   let properties = {
     Id: $("#atc-prescriptionId").val(),
-    PacientName: $("#atc-pacientName-prescription").val(),
+    PacientName: $("#atc-pacientName").val(),
     DoctorName: $("#atc-doctorName").val(),
     DateOfMedicalAppoiment: $("#atc-dataAppoiment").val(),
   };

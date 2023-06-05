@@ -61,91 +61,16 @@
     text-align: center;
 }
 
-.p1 {
-    margin-left: 35vh;
-}
-
 .prescription-data-atm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     margin-top: 2vh;
-
 }
 
-.p2 {
-    margin-top: 1.5%;
-    margin-left: 2vh;
-}
-
-.atm-MedicUnity {
-    margin-bottom: 7%;
-    border-bottom: 2px solid #007bff;
-    width: 44.2vh; 
-    text-align: center;
-    margin-left: 1%;
-    margin-top: -0.5%;
-}
-
-.p3 {
-    margin-top: -3%;
-    margin-left: 2vh;
-}
-
-.atm-line-3 {
-    width: 38vh;
-    height: 2px;
-    background-color: #007bff;
-    margin-top: -1%;
-    margin-bottom: 2.5%;
-    margin-left: 2px;
-}
-
-.atm-line-4 {
-    width: 26vh;
-    height: 2px;
-    background-color: #007bff;
-    margin-top: -1%;
-    margin-bottom: 2.5%;
-    margin-left: 5px;
-}
-
-.atm-RestDays {
-    margin-bottom: 3vh;
-    border-bottom: 2px solid #007bff;
-    width: 15vh; 
-    text-align: center;
-    margin-top: -2.5vh;
-    margin-left: 1vh;
-}
-
-.atm-line-5 {
-    width: 17vh;
-    height: 2px;
-    background-color: #007bff;
-    margin-top: 1%;
-    margin-bottom: 2.5%;
-    margin-left: 5px;
-}
-
-.p4 {
-    margin-top: -2%;
-    margin-left: 2vh;
-}
-
-.atm-line-6 {
-    width: 18vh;
-    height: 2px;
-    background-color: #007bff;
-    margin-top: 1%;
-    margin-bottom: 2.5%;
-    margin-left: 5px;
-}
-
-.p5 {
-    margin-top: -2%;
-    margin-left: 2vh;
+.p1 {
+    margin-left: 35vh;
 }
 
 .atm-pacient {
@@ -156,6 +81,44 @@
     text-align: left;
 }
 
+.p2 {
+    margin-top: 1.5%;
+    margin-left: 2vh;
+}
+
+.atm-MedicUnity {
+    margin-bottom: 7%;
+    border-bottom: 2px solid #007bff;
+    width: 45.5vh; 
+    text-align: center;
+    margin-left: 1%;
+    margin-top: -0.5%;
+}
+
+.p3 {
+    margin-top: -3%;
+    margin-left: 2vh;
+}
+
+.atm-RestDays {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 15vh; 
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
+
+.p4 {
+    margin-top: -3%;
+    margin-left: 2vh;
+}
+
+.p5 {
+    margin-top: -3%;
+    margin-left: 2vh;
+}
+
 .atm-MedicUnity span {
     margin-bottom: 0%;
 }
@@ -163,7 +126,7 @@
 .atm-Data {
     margin-bottom: 5vh;
     border-bottom: 2px solid #007bff;
-    width: 9.3vh; 
+    width: 11.9vh; 
     text-align: center;
     margin-top: -3.5vh;
     margin-left: 1vh;
@@ -178,11 +141,16 @@
     margin-left: 1vh;
 }
 
-@media (max-width: 1920px) and (min-width: 1920px) {
+.atm-Time {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 15vh; 
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
 
-    .p1 {
-        margin-left: 37vh;
-    }
+@media (max-width: 1920px) and (min-width: 1920px) {
 
     .prescription-data-atm {
         display: flex;
@@ -190,59 +158,82 @@
         width: 100%;
         align-items: center;
         margin-top: 5vh;
+    }
 
+    .p1 {
+        margin-left: 45vh;
+    }
+
+    .atm-pacient {
+        margin-top: -2%;
+        margin-bottom: 2%;
+        border-bottom: 2px solid #007bff;
+        width: 71vh; 
+        text-align: left;
     }
 
     .p2 {
-        margin-left: 1vh;
+        margin-top: 0.8%;
+        width: 26%;
     }
     
     .atm-MedicUnity {
-        margin-bottom: 5%;
+        margin-bottom: 4%;
         border-bottom: 2px solid #007bff;
-        width: 44.5vh; 
+        width: 50.5vh; 
         text-align: center;
         margin-left: 1%;
-        margin-top: -1%;
-    }
-
-    .atm-line-4 {
-        width: 26vh;
-        height: 2px;
-        background-color: #007bff;
-        margin-top: 0.2%;
-        margin-bottom: 2.5%;
-        margin-left: 5px;
+        margin-top: -0.5%;
     }
 
     .p3 {
-        margin-top: -2%;
+        margin-top: 0%;
     }
 
-    .atm-line-5 {
-        width: 48.5vh;
-        height: 2px;
-        background-color: #007bff;
-        margin-top: 0.2%;
-        margin-bottom: 2.5%;
-        margin-left: 5px;
+    .atm-Local {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 50vh; 
+        text-align: center;
+        margin-top: -1vh;
+        margin-left: 1vh;
     }
 
+    .atm-Data {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 12vh; 
+        text-align: center;
+        margin-top: -1vh;
+        margin-left: 1vh;
+    }
+    
     .p4 {
-        margin-top: -2%;
+        margin-top: -3.5%;
+        margin-left: 2vh;
     }
 
-    .atm-line-6 {
-        width: 54.5vh;
-        height: 2px;
-        background-color: #007bff;
-        margin-top: 0.2%;
-        margin-bottom: 2.5%;
-        margin-left: 5px;
+    .atm-Time {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 15vh; 
+        text-align: center;
+        margin-top: -3.5vh;
+        margin-left: 1vh;
     }
-
+    
     .p5 {
-        margin-top: -2%;
+        margin-top: -3.5%;
+        margin-left: 2vh;
+    }
+
+    .atm-RestDays {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 10vh; 
+        text-align: center;
+        margin-top: -3.5vh;
+        margin-left: 1vh;
     }
 
 }

@@ -5,9 +5,9 @@
     ViewData["title"] = "Gerar Receituário + Atestado Médico";
 }
 
-<div class="prescription">
+<div class="prescription container-fluid">
 
-    <div class="card">
+    <div class="card card-prescription mb-4 col-md-5 p-0">
 
         <div class="card-header text-light">
 
@@ -27,39 +27,23 @@
 
                         <h5 class="card-header">Informações básicas :</h5>
 
-                        <div class="card-body">
+                        <div class="card-body card-body-edit-prescription">
 
                             <input id="atc-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id"
                                 disabled>
 
                             <label class="text-primary" for="">Nome do Paciente: </label>
-                            <input type="text" id="atc-pacientName-prescription" class="form-control border-primary mb-3"
-                                asp-for="PacientName" required=>
-
-                            <label class="text-primary" for="">Nome do Médico: </label>
-                            <input type="text" id="atc-doctorName" class="form-control border-primary mb-3"
-                                asp-for="DoctorName" required>
+                            <input type="text" id="atc-pacientName" onkeyup="ATCShowPrescriptionPacient()" class="form-control border-primary mb-3" asp-for="PacientName" required>
 
                             <label class="text-primary" for="">Data da consulta: </label>
-                            <input type="date" id="atc-dataAppoiment" class="form-control border-primary mb-3"
-                                asp-for="DateOfMedicalAppoiment" required>
+                            <input type="date" id="atc-dataAppoiment" onblur="ATCShowPrescriptionData()" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" required>
 
-                        </div>
+                            <label class="text-primary" for="">Nome do Médico: </label>
+                            <input type="text" id="atc-doctorName" onkeyup="ATCShowPrescriptionMedic()" class="form-control border-primary mb-3" asp-for="DoctorName" required>
 
-                    </div>
-
-                    <div class="card medicine-card">
-
-                        <h5 class="card-header">Atestado de Comparecimento :</h5>
-
-                        <div class="card-body">
-
-                            <p class="ml-3 text-danger">Salve a receita para inserir o atestado de comparecimento.</p>
-
-                            <button target type="button" title="Salve a receita para adicionar um atestado médico."
-                                class="btn btn-md btn-info btn-printer medic-btn ml-3" disabled>
-                                <span class="material-symbols-outlined"> clinical_notes </span> Atestado de comparecimento
-                            </button>
+                            <div class="edit-button col-md-3">
+                                <button type="submit" class="btn btn-sm btn-primary btn-printer mt-3"> <span class="material-symbols-outlined"> save </span> Salvar</button>
+                            </div>
 
                         </div>
 
@@ -74,7 +58,7 @@
                             <p class="ml-3 text-danger">Salve a receita para inserir medicamentos.</p>
 
                             <button target type="button" title="Salve a receita para adicionar medicamentos."
-                                class="btn btn-md btn-info btn-printer medic-btn ml-3" disabled>
+                                class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled>
                                 <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos
                             </button>
 
@@ -82,12 +66,78 @@
 
                     </div>
 
-                    <button type="submit" title="Gerar Receita" class="btn btn-md btn-secondary btn-printer"> <span
-                            class="material-symbols-outlined"> save </span> Salvar </button>
+                    <div class="card medicine-card">
+
+                        <h5 class="card-header">Atestado de Comparecimento :</h5>
+
+                        <div class="card-body">
+
+                            <p class="ml-3 text-danger">Salve a receita para inserir o atestado de comparecimento.</p>
+
+                            <button target type="button" title="Salve a receita para adicionar um atestado médico."
+                                class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled>
+                                <span class="material-symbols-outlined"> clinical_notes </span> Atestado de
+                                comparecimento
+                            </button>
+
+                        </div>
+
+                    </div>
 
                 </form>
 
             </div>
+        </div>
+
+    </div>
+
+    <div class="show-prescription col-md-5">
+
+        <div class="header-show-prescription mt-3">
+
+            <div class="header-img">
+
+                <img src="../images/logotipo-hospital-sao-francisco.png"
+                    alt="logotipo da vizualização do receituário comum">
+
+            </div>
+
+            <div class="show-logo">
+
+                <h1>RECEITUÁRIO</h1>
+                <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+                <h2>HOSPITAL SÃO FRANCISCO</h2>
+
+            </div>
+
+        </div>
+
+        <div class="show-body">
+
+            <div class="prescription-data mt-3">
+
+                <div class="inputs">
+                    <p class="m-0 p-0">NOME DO PACIENTE :</p><span class="content" id="atc-nameP"></span>
+                </div>
+                <div class="inputs">
+                    <p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span class="content" id="atc-dataA"></span>
+                </div>
+                <div class="inputs">
+                    <p class="m-0 p-0">NOME DO MÉDICO :</p><span class="content" id="atc-nameM"></span>
+                </div>
+
+            </div>
+
+            <div class="medicacoes">
+                <h3 class="text-center text-primary font-weight-bold mt-3">MEDICAMENTOS :</h3>
+            </div>
+
+        </div>
+
+        <div class="show-footer">
+            <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+            <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+            <div class="line"></div>
         </div>
 
     </div>

@@ -6,7 +6,7 @@ function deleteMedication(idItem) {
     datatype: "json",
     type: "POST",
     success: function () {
-      if (idItem != 0) {
+      if (idItem > 0) {
 
         alert("Medicação excluída com sucesso!");
 
