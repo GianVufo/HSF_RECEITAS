@@ -19,6 +19,8 @@
     Model.Id).ToList();
 
     int medicIdPrint = @Model.Id;
+
+    var atmData = @Model.DateOfMedicalAppoiment.ToString("dd");
 }
 
 <div class="prescription container-fluid">
@@ -95,9 +97,12 @@
                                         class="material-symbols-outlined">
                                         syringe </span> Adicionar Medicamentos</button>
 
-                                <a href="/AtestadoMedico/ATMPrescriptionPrintToPDF?id=@Model.Id" target="_blank"
-                                    title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"
-                                    href=""><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                                @if(medicList.Count() <= 0 || atmList.Count <=0)
+                                {
+                                    <button title="Insira medicamentos para imprimir!" class="btn btn-sm btn-secondary btn-printer-edit medic-btn" disabled><span class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
+                                }else {
+                                    <a href="/AtestadoMedico/ATMPrescriptionPrintToPDF?id=@Model.Id" target="_blank" title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                                }
 
                             </div>
 
@@ -354,11 +359,15 @@
 
                             <p class="p3">do</p>
 
-                            <div class="atm-line-3"></div>
+                            <div class="atm-Local">
+                                <span class="">Hospital Municipal de Três Marias</span>
+                            </div>
 
                             <p class="p3 ml-2">no dia</p>
 
-                            <div class="atm-line-4"></div>
+                            <div class="atm-Data">
+                                <span class="">@atmData</span>
+                            </div>
 
                         </div>
 

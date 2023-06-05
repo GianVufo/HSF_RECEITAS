@@ -48,13 +48,13 @@
                                 <input type="text" id="up-pacientName" class="form-control border-primary mb-3"
                                     asp-for="PacientName" required>
 
-                                <label class="text-primary" for="">Nome do Médico: </label>
-                                <input type="text" id="up-doctorName" class="form-control border-primary mb-3"
-                                    asp-for="DoctorName" required>
-
                                 <label class="text-primary" for="">Data da consulta: </label>
                                 <input type="date" id="up-dataAppoiment" class="form-control border-primary mb-3"
                                     asp-for="DateOfMedicalAppoiment" required>
+
+                                <label class="text-primary" for="">Nome do Médico: </label>
+                                <input type="text" id="up-doctorName" class="form-control border-primary mb-3"
+                                    asp-for="DoctorName" required>
 
                                 <p class="text-danger">Salve as alterações antes de imprimir.</p>
 
@@ -87,9 +87,12 @@
                                 class="btn btn-sm btn-info btn-printer"> <span class="material-symbols-outlined">
                                     syringe </span> Adicionar Medicamentos</button>
 
-                                <a href="/Receituario/PrescriptionPrintToPDF?id=@Model.Id" target="_blank"
-                                title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"
-                                href=""><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                                @if(medicList.Count() <= 0)
+                                {
+                                    <button title="Insira medicamentos para imprimir!" class="btn btn-sm btn-secondary btn-printer-edit medic-btn" disabled><span class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
+                                }else {
+                                    <a href="/Receituario/PrescriptionPrintToPDF?id=@Model.Id" target="_blank" title="Imprimir receituário" class="btn btn-sm btn-secondary btn-printer-edit"><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                                }
 
                             </div>
 

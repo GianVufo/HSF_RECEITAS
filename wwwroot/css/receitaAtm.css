@@ -66,25 +66,30 @@
 }
 
 .prescription-data-atm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-top: 2vh;
+
 }
 
 .p2 {
+    margin-top: 1.5%;
     margin-left: 2vh;
 }
 
 .atm-MedicUnity {
     margin-bottom: 7%;
     border-bottom: 2px solid #007bff;
-    width: 46.5vh; 
+    width: 44.2vh; 
     text-align: center;
     margin-left: 1%;
-    margin-top: -1.5%;
+    margin-top: -0.5%;
 }
 
 .p3 {
-    margin-top: -4%;
+    margin-top: -3%;
     margin-left: 2vh;
 }
 
@@ -155,6 +160,23 @@
     margin-bottom: 0%;
 }
 
+.atm-Data {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 9.3vh; 
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
+
+.atm-Local {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 50vh; 
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
 
 @media (max-width: 1920px) and (min-width: 1920px) {
 

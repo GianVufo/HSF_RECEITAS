@@ -746,3 +746,4 @@ C:\Users\gianluca.vialli\Desktop\Projeto Receituario\Hsf_Receitas\obj\Debug\netc
 C:\Users\gianluca.vialli\Desktop\Projeto Receituario\Hsf_Receitas\obj\Debug\netcoreapp3.1\Hsf_Receitas.dll
 C:\Users\gianluca.vialli\Desktop\Projeto Receituario\Hsf_Receitas\obj\Debug\netcoreapp3.1\Hsf_Receitas.pdb
 C:\Users\gianluca.vialli\Desktop\Projeto Receituario\Hsf_Receitas\obj\Debug\netcoreapp3.1\Hsf_Receitas.genruntimeconfig.cache
+C:\Users\Administrador\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\libman.json
