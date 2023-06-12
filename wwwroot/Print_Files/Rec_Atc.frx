@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="05/02/2023 13:41:38" ReportInfo.Modified="05/02/2023 14:24:49" ReportInfo.CreatorVersion="2023.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/02/2023 13:41:38" ReportInfo.Modified="06/12/2023 13:33:17" ReportInfo.CreatorVersion="2023.1.0.0">
   <Dictionary>
     <BusinessObjectDataSource Name="medicationList" ReferenceName="medicationList" DataType="null" Enabled="true">
       <Column Name="Id" DataType="System.Int32"/>
@@ -47,7 +47,7 @@
       <TextObject Name="Text25" Left="718.2" Top="9.45" Width="302.4" Height="37.8" Text="FUNDAÇÃO DE SAÚDE TRÊS MARIAS" HorzAlign="Center" VertAlign="Bottom" Font="Times New Roman, 11pt, style=Bold, Underline" TextFill.Color="0, 120, 215"/>
       <TextObject Name="Text26" Left="718.2" Top="47.25" Width="302.4" Height="18.9" Text="HOSPITAL SÃO FRANCISCO" HorzAlign="Center" VertAlign="Bottom" Font="Times New Roman, 11pt, style=Bold" TextFill.Color="0, 120, 215"/>
     </ReportTitleBand>
-    <DataBand Name="Data1" Top="99.44" Width="1047.06" Height="189" DataSource="prescriptionList">
+    <DataBand Name="Data1" Top="99.44" Width="1047.06" Height="189" Guides="18.9" DataSource="prescriptionList">
       <ShapeObject Name="Shape1" Left="28.35" Top="28.35" Width="444.15" Height="37.8" Border.Color="0, 120, 215" Shape="RoundRectangle"/>
       <ShapeObject Name="Shape2" Left="28.35" Top="75.6" Width="444.15" Height="37.8" Border.Color="0, 120, 215" Shape="RoundRectangle"/>
       <TextObject Name="Text7" Left="37.8" Top="28.35" Width="160.65" Height="37.8" Text="NOME DO PACIENTE :" VertAlign="Center" Font="Times New Roman, 10pt, style=Bold" TextFill.Color="0, 120, 215"/>
@@ -67,6 +67,7 @@
       <LineObject Name="Line7" Left="689.85" Top="160.65" Width="340.2" Border.Color="Highlight"/>
       <TextObject Name="Text30" Left="595.35" Top="160.65" Width="28.35" Height="28.35" Border.Color="Highlight" Text="do" HorzAlign="Justify" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="Highlight"/>
       <LineObject Name="Line9" Left="614.25" Top="179.55" Width="415.8" Border.Color="Highlight"/>
+      <TextObject Name="Text56" Left="633.15" Top="160.65" Width="387.45" Height="18.9" Text="Hospital Municipal São Francisco" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 9pt" TextFill.Color="Highlight"/>
       <DataBand Name="Data2" Top="402.26" Width="1047.06" Height="18.9" DataSource="medicationList">
         <LineObject Name="Line3" Top="18.9" Width="491.4" Border.Color="0, 120, 215"/>
         <TextObject Name="Text15" Width="85.05" Height="18.9" Text="[medicationList.MedicationName]" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 10pt" TextFill.Color="0, 120, 215"/>
