@@ -61,8 +61,8 @@ namespace Hsf_Receitas.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError("Erro ao medicamento do Receituário!" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao excluir medicamento!" });
+                _logger.LogError("Erro ao excluir medicamento do Receituário!" + e.Message);
+                return Json(new { stats = "ERROR", message = "Falha ao excluir medicamento!" });
             }
 
         }
