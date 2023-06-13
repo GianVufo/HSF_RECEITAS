@@ -1,7 +1,7 @@
 @model AtestadoComparecimento
 
 @{
-    ViewData["title"] = "Adicionar Atestado Médico";
+    ViewData["title"] = "Adicionar Atestado de Comparecimento";
 }
 
 <div class="col-md-12 atm mb-3">
@@ -22,7 +22,7 @@
 
                 <label class="text-primary" for="">Nome do Paciente: </label>
                 <input type="text" id="atc-pacientName" class="form-control border-primary mb-3" asp-for="PacientName"
-                required disabled>
+                required>
 
                 <label class="text-primary" for="">Turno: </label>
                 <input type="text" id="atc-turn" class="form-control border-primary mb-3" asp-for="Turno"

@@ -3,7 +3,7 @@
 @using Hsf_Receitas.Data;
 
 @{
-    ViewData["title"] = "Completar Receituário";
+    ViewData["title"] = "Completar Receituario + Atestado de comparecimento";
 
     Medicacao medic = new Medicacao();
     AtestadoComparecimento atc = new AtestadoComparecimento();
@@ -17,8 +17,6 @@
 
     List<AtestadoComparecimento> atcList = database.AtestadosComparecimento.Where(m => m.ReceituarioId ==
     Model.Id).ToList();
-
-    int medicIdPrint = @Model.Id;
 }
 
 <div class="prescription container-fluid">
@@ -125,20 +123,30 @@
 
                         <div class="card-body">
 
-                            @if(atcList.Count() <= 0)
+                            @if (atcList.Count() <= 0)
                             {
                                 <p class="text-info ml-3">Agora você pode adicionar um atestado de comparecimento!</p>
 
-                                <button type="button" data-toggle="modal" data-target="#atc-modal-@Model.Id" title="Adicionar atestado de comparecimento" onclick=" ATC()" class="btn btn-sm btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> clinical_notes </span> Atestado de comparecimento</button>
+                                <button type="button" data-toggle="modal" data-target="#atc-modal-@Model.Id"
+                                title="Adicionar atestado de comparecimento" onclick=" ATC()"
+                                class="btn btn-sm btn-info btn-printer ml-3"> <span class="material-symbols-outlined">
+                                        clinical_notes </span> Atestado de comparecimento</button>
 
-                                <p class="text-danger ml-3 mt-3 mb-0" role="alert"> Nenhum atestado de comparecimento cadastrado ! </p>
+                                <p class="text-danger ml-3 mt-3 mb-0" role="alert"> Nenhum atestado de comparecimento
+                                    cadastrado ! </p>
 
-                            }else {
+                            }
+                            else
+                            {
                                 @foreach (var item in atcList)
                                 {
-                                    <button target type="button" title="Atestado de comparecimento já cadastrado" class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled> <span class="material-symbols-outlined"> clinical_notes </span> Atestado de comparecimento</button>
+                                    <button target type="button" title="Atestado de comparecimento já cadastrado"
+                                class="btn btn-sm btn-info btn-printer medic-btn ml-3" disabled> <span
+                                    class="material-symbols-outlined"> clinical_notes </span> Atestado de
+                                        comparecimento</button>
 
-                                    <p class="text-info ml-3 mt-3 mb-0" > Atestado de comparecimento cadastrado para: <span class="text-info font-weight-bold mt-3">@item.PacientName</span> </p>                                   
+                                    <p class="text-info ml-3 mt-3 mb-0"> Atestado de comparecimento cadastrado para: <span
+                                    class="text-info font-weight-bold mt-3">@item.PacientName</span> </p>
                                 }
                             }
 
@@ -342,22 +350,22 @@
 
                     @foreach (var item in atcList)
                     {
-                        <article class="mt-5 text-primary atm-article">
+                        <article class="mt-5 text-primary atc-article">
 
-                            <p class="p1">Atesto para os devido fins que o(a) Sr.(a)</p>
+                            <p class="p1-atc">Atesto para os devido fins que o(a) Sr.(a)</p>
 
-                            <div class="atm-pacient">
+                            <div class="atc-pacient">
                                 <span class="text-center ml-2">@item.PacientName</span>
                             </div>
 
                             <div class="row">
 
-                                <p class="p2">Compareceu ao</p>
+                                <p class="p2-atc">Compareceu ao</p>
 
-                                <div class="atm-MedicUnity">
-                                    
-                                    <span class="">.</span>
-                            
+                                <div class="atc-MedicUnity">
+
+                                    <span class=""></span>
+
                                 </div>
 
                             </div>
@@ -366,41 +374,42 @@
 
                                 <p class="p3">do</p>
 
-                                <div class="atm-Local">
+                                <div class="atc-Localidade">
                                     <span class="">Hospital Municipal de Três Marias</span>
                                 </div>
 
                             </div>
 
                         </article>
+
+                        <div class="atc-footer">
+
+                            <div class="row">
+
+                                <p class="p-turn">Turno :</p>
+
+                                <div class="atc-local">
+                                    <span class="">@item.Turno</span>
+                                </div>
+
+                            </div>
+
+                            @foreach (var a in prescriptionList)
+                            {
+                                <div class="row">
+
+                                    <p class="p-date">Data :</p>
+
+                                    <div class="atc-local">
+                                        <span class="">@a.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+
                     }
-
-                    <div class="">
-
-                        <p class="">Para:</p>
-
-                        <div class="">
-
-                            <label class=""> <input type="radio"> Acompanhamento de paciente</label>
-
-                            <label class=""> <input type="radio"> Exame</label>
-
-                            <label class=""> <input type="radio"> Outros: <span class="atm-Local">Teste</span></label>
-                                
-                        </div>
-
-                    </div>
-                        <!--<p class="p4 ml-2">horas. Necessitando de</p>
-
-                        <div class="atm-RestDays">
-                                
-                            <span class="">Local</span>
-                        
-                        </div>
-
-                        <p class="p5 ml-2">dias de repouso.</p>-->
-
-                    
 
                 </div>
 

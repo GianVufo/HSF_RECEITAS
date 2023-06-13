@@ -21,10 +21,10 @@ function ATM() {
   document.getElementById("atm-pacientName").value = pacientName;
 }
 
-function ATC() {
+/*function ATC() {
   var pacientName = document.getElementById("atc-up-pacientName").value;
   document.getElementById("atc-pacientName").value = pacientName;
-}
+}*/
 
 /* Mostrar dados do paciente em tempo real em Receituário */
 
