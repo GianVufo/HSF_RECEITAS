@@ -13,6 +13,10 @@ function deleteMedication(idItem) {
 
         alert("Medicação excluída com suesso !");
 
+      } else if (output.stats == "INVALID") {
+
+        alert("Falha ao tentar excluir a medicação. Tente novamente em alguns instantes !");
+
       }
 
       location.reload();

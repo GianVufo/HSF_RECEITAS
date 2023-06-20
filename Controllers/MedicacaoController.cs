@@ -48,7 +48,7 @@ namespace Hsf_Receitas.Controllers
 
                 var item = database.Medicamentos.Find(id);
 
-                if (item != null)
+                if (item.Id != 0)
                 {
                     database.Medicamentos.Remove(item);
                     database.SaveChanges();

@@ -1,0 +1,1 @@
+2023-06-20T17:41:45.7477750-03:00 0HMRHPQ2GQODB:00000001 [ERR] Erro ao excluir medicamento do Receituário!Object reference not set to an instance of an object. (5ea98322)
