@@ -15,7 +15,11 @@ function deleteMedication(idItem) {
 
       } else if (output.stats == "INVALID") {
 
-        alert("Falha ao tentar excluir a medicação. Tente novamente em alguns instantes !");
+        alert("Falha ao tentar excluir a medicação. Tente novamente em alguns instantes !")
+
+      } else if (output.stats == "ERROR") {
+
+        alert("Falha na conexão. Erro ao excluir medicação, tente novamente em alguns instantes!");
 
       }
 
