@@ -3,6 +3,7 @@ C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\ww
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\css\medicamento.css
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\css\navbarStyle.css
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\css\receita.css
+C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\css\receitaAtc.css
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\css\receitaAtm.css
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\css\site.css
 C:\Users\gianluca.vialli\Desktop\Hsf_Receitas\bin\Debug\netcoreapp3.1\publish\wwwroot\favicon.ico

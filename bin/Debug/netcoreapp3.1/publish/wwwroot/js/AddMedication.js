@@ -15,13 +15,14 @@ function AddMedications() {
     .done(function (output) {
       if (output.stats == "OK") {
 
-        alert("Medicação: " + properties.MedicationName + "-" + properties.MedicationDosage + " cadastrada com sucesso!")
+        alert("Medicação: " + properties.MedicationName + " - " + properties.MedicationDosage + " cadastrada com sucesso!")
         $(location).attr('href', '/Receituario/CompletePrescription?id=' + parseInt(properties.ReceituarioId));
 
       } else if (output.stats == "INVALID") {
         $(".alerta").html('<div class="alert alert-danger"> Não foi possível cadastrar essa medicação. Tente mais tarde!</div>');
 
       }
+      
     })
 
     .fail(function () {

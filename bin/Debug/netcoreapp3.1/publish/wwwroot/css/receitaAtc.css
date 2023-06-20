@@ -1,0 +1,121 @@
+
+.p1-atc {
+    margin-left: 35vh;
+}
+
+.atc-pacient {
+    margin-top: -2%;
+    border-bottom: 2px solid #007bff;
+    width: 100%; 
+    text-align: left;
+}
+
+.p2-atc {
+    margin-top: 2.5%;
+    margin-left: 2vh;
+}
+
+.atc-MedicUnity {
+    margin-bottom: 4.5%;
+    border-bottom: 2px solid #007bff;
+    width: 57.6vh; 
+    text-align: center;
+    margin-left: 1%;
+    margin-top: 2;
+}
+
+.atc-Localidade {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 69.6vh; 
+    text-align: center;
+    margin-top: -3vh;
+    margin-left: 1vh;
+}
+
+.atc-div {
+    width: 40vh;
+    margin-right: 32vh;
+    margin-left: 0%;
+    color: #007bff;
+    border: 2px solid yellow;
+    margin-bottom: 5%;
+}
+
+.atc-div p {
+    font-weight: bold;
+}
+
+.atc-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    margin-left: 38vh;
+    margin-top: 10vh;
+    color: #007bff;
+    padding: 2%;
+}
+
+.p-turn {
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+.p-date {
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+.atc-local {
+    border-bottom: 2px solid #007bff;
+    width: 15vh; 
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 1vh;
+    margin-bottom: 3vh;
+}
+
+@media (max-width: 1920px) and (min-width: 1920px) {
+    .p1-atc {
+        margin-left: 45vh;
+    }
+    
+    .p2-atc {
+        margin-top: 3%;
+        margin-left: 2vh;
+    }
+    
+    .atc-MedicUnity {
+        margin-bottom: 3%;
+        width: 60vh; 
+        margin-left: 1%;
+    }
+    
+    .atc-Localidade {
+        margin-bottom: 2vh;
+        border-bottom: 2px solid #007bff;
+        width: 68vh; 
+        margin-top: -0.5vh;
+    }
+    
+    .atc-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: 50%;
+        margin-left: 52vh;
+        margin-top: 20vh;
+        color: #007bff;
+        padding: 2%;
+    }
+    
+    .atc-local {
+        width: 14vh; 
+        margin-left: 1vh;
+    }
+}

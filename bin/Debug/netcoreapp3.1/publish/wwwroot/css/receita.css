@@ -148,6 +148,13 @@
     font-size: 18px;
 }
 
+.button-prescription {
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
 .btn-printer-edit {
     width: 7em;
     display: flex;
@@ -180,10 +187,7 @@
 }
 
 .edit-button {
-    width: 100%;
-    height: 100%;
-    padding: 0%;
-    margin-left: 8vh;
+    margin-left: 6vh;
 }
 
 .edit-button button {

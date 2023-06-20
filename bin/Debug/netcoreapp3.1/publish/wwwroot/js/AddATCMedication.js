@@ -15,7 +15,7 @@ function AddATCMedications() {
     .done(function (output) {
       if (output.stats == "OK") {
 
-        alert("Medicação: " + properties.MedicationName + " cadastrada com sucesso!")
+        alert("Medicação: " + properties.MedicationName + " - " + properties.MedicationDosage + " cadastrada com sucesso!")
         $(location).attr('href', '/AtestadoComparecimento/ATCCompletePrescription?id=' + parseInt(properties.ReceituarioId));
 
       } else if (output.stats == "INVALID") {

@@ -52,11 +52,11 @@ namespace Hsf_Receitas.Controllers
                 {
                     database.Medicamentos.Remove(item);
                     database.SaveChanges();
+                    return Json(new { stats = "OK"});
+
                 }else {
                     return Json(new { stats = "INVALID"});
-                }
-
-                return Json(new { stats = "OK"});
+                }           
                 
             }
             catch (Exception e)
